@@ -73,3 +73,9 @@ Como mostra a figura abaixo:
 
 
 ![pgadmin](../img/pgadmin4.jpg)
+
+<hr>
+
+## Exercício:
+
+1. Crie um Banco de Dados Geográficos seguindo os passos anteriores com o nome `pb`.
