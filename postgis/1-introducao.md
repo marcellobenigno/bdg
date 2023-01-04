@@ -21,3 +21,21 @@ dados.
 [![Instalação](http://img.youtube.com/vi/WCjLr1YVJ1s/0.jpg)](http://www.youtube.com/watch?v=WCjLr1YVJ1s "Como instalar PostgreSQL com PostGIS no Windows")
 
 Como instalar PostgreSQL com PostGIS no Windows | Leandro França - GeoOne
+
+
+## Criando um Banco de Dados Geográficos
+
+### Através de linha de comando:
+
+```shell
+# Criando o Banco de Dados
+createdb gis
+# Acessando o Banco de Dados
+psql gis
+
+# Habilitando a extensão:
+CREATE EXTENSION postgis;
+
+# Saindo do Banco de Dados
+\q
+```
