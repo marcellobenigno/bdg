@@ -39,3 +39,37 @@ CREATE EXTENSION postgis;
 # Saindo do Banco de Dados
 \q
 ```
+
+
+### Através do PgAdmin
+
+Clique com o botão direito em `Databases` e escolha `Create` >  `Database:
+
+
+![pgadmin](../img/pgadmin1.jpg)
+
+
+Preencha o nome do BDG, no caso do exemplo abaixo, `gis`:
+
+![pgadmin](../img/pgadmin2.jpg)
+
+
+Em seguida, clique no botão `Query Tool` e execute a query abaixo:
+
+![pgadmin](../img/pgadmin3.jpg)
+
+
+Volte para a janela principal do PGAdmin e verifique se foram criados os seguintes elementos:
+
+- Aggregates (18)
+- Functions (695)
+- Operators (51)
+- Tables (1)
+- Trigger Functions (2)
+- Types (9)
+- Views (2)
+
+Como mostra a figura abaixo:
+
+
+![pgadmin](../img/pgadmin4.jpg)
