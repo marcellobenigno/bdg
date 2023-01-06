@@ -4,7 +4,7 @@ Os dados espaciais deste curso estão armazenados no formato `GeoPackage` e o li
 
 https://drive.google.com/file/d/1uBAsmt7UW6enTe4miAxVLK5U98BkvCi4/view?usp=share_link
 
-OBS: É necessário estar logado na sua conta do IFPB para ter acesso.
+OBS: É necessário estar **logado** na sua conta do **IFPB** para ter acesso.
 
 <hr/>
 
