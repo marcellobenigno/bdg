@@ -84,4 +84,42 @@ MULTILINESTRING((0 0,1 1,1 2),(2 3,3 2,5 4))
 MULTIPOLYGON(((0 0,4 0,4 4,0 4,0 0),(1 1,2 1,2 2,1 2,1 1)),((-1 -1,-1 -2,-2 -2,-2 -1,-1 -1)))
 GEOMETRYCOLLECTION(POINT(2 3),LINESTRING(2 3,3 4))
 ```
+### Exemplos:
+
+#### Crie as tabelas a seguir:
+
+![Tabelas de Exemplo](../img/tabelas_exemplo.jpg)
+
+```sql
+CREATE TABLE pnt_interesse (
+    id serial PRIMARY KEY,
+    nome varchar(100),
+    dt_coleta date
+);
+SELECT AddGeometryColumn('public', 'pnt_interesse', 'geom', 4326, 'POINT', 2);
+
+-- **************************************************************************** --
+
+CREATE TABLE adutora (
+    id serial PRIMARY KEY,
+    descricao varchar(50)
+);
+SELECT AddGeometryColumn('public', 'adutora', 'geom', 4326, 'LINESTRING', 2);
+
+-- **************************************************************************** --
+
+CREATE TABLE area_estudo (
+    id serial PRIMARY KEY,
+    nome varchar(50)
+);
+SELECT AddGeometryColumn('public', 'area_estudo', 'geom', 4326, 'POLYGON', 2);
+
+```
+
+### Exercícios:
+
+1. Crie as tabelas a seguir:
+
+![Exercício](../img/fig_exercicio.jpg)
+
 
