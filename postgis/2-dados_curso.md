@@ -1,4 +1,4 @@
-## 3 - Dados do Curso
+## 2 - Dados do Curso
 
 Os dados espaciais deste curso estão armazenados no formato `GeoPackage` e o link para download se encontra abaixo:
 
