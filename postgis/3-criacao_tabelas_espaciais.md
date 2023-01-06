@@ -45,7 +45,7 @@ Recomenda-se rodar o comando `Populate_Geometry_Columns` para que a tabela seja 
 
 * `enforce_srid_geom`: garante que cada geometria esteja no mesmo sistema de referência (SRID).
 
-## Tabela `spatial_ref_sys` e View `geometry_columns`:
+### Tabela `spatial_ref_sys` e View `geometry_columns`:
 
 ![relações](../img/table_relationships.png)
 
@@ -67,3 +67,21 @@ Alguns Exemplos de SRID:
 - SIRGAS / UTM zone 25S = 31985
 
 Já a *view* `geometry_columns` fornece uma listagem de todas as tabelas espaciais registradas e informações básicas sobre as mesmas.
+
+
+### Tipos de Geometria
+
+![tipos de geometria](../img/tipos_geometria.png)
+
+#### Representação de geometrias no formato Well-known text (WKT)
+
+```
+POINT(0 0)
+LINESTRING(0 0,1 1,1 2)
+POLYGON((0 0,4 0,4 4,0 4,0 0),(1 1, 2 1, 2 2, 1 2,1 1))
+MULTIPOINT((0 0),(1 2))
+MULTILINESTRING((0 0,1 1,1 2),(2 3,3 2,5 4))
+MULTIPOLYGON(((0 0,4 0,4 4,0 4,0 0),(1 1,2 1,2 2,1 2,1 1)),((-1 -1,-1 -2,-2 -2,-2 -1,-1 -1)))
+GEOMETRYCOLLECTION(POINT(2 3),LINESTRING(2 3,3 4))
+```
+
