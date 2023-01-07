@@ -60,9 +60,9 @@ VALUES (st_geomfromtext(
 
 ### Exercício:
 
-1. Para as tabelas criadas no exercício anterior, insira os seguintes registros:
+1. Para as tabelas criadas no exercício anterior, insira os registros a seguir:
 
-**OBS:** coloque o mesmo o **SRID** adotado nas tabelas em cada `INSERT`
+**OBS:** não esqueça de colocar o mesmo o **SRID** adotado nas tabelas em cada `INSERT`.
 
 ```sql
 -- ************************************************************ --
