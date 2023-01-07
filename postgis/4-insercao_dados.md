@@ -62,6 +62,8 @@ VALUES (st_geomfromtext(
 
 1. Para as tabelas criadas no exercício anterior, insira os seguintes registros:
 
+**OBS:** coloque o mesmo o **SRID** adotado nas tabelas em cada `INSERT`
+
 ```sql
 -- ************************************************************ --
 		DADOS DA TABELA pnt_estudo
