@@ -33,11 +33,17 @@ CREATE TABLE pontos (
 	id serial PRIMARY KEY,
 	geom geometry(POINT, 4326)
 );
--- Necessário para garantir a integridade dos dados espaciais da tabela
-SELECT Populate_Geometry_Columns('public.pontos'::regclass);
 ```
 
-Recomenda-se rodar o comando `Populate_Geometry_Columns` para que a tabela seja registrada de forma correta na **view** de metadados `geometry_columns` e que também sejam criadas as `constraints` a seguir:
+Recomenda-se rodar o comando [`Populate_Geometry_Columns`](https://postgis.net/docs/Populate_Geometry_Columns.html) para que a tabela seja registrada de forma correta na **view** de metadados `geometry_columns`.
+
+Quando é adicionado ao comando `Populate_Geometry_Columns` a *flag* `false`, como mostra o exemplo abaixo:
+
+```sql
+SELECT Populate_Geometry_Columns('public.minha_tabela_espacial'::regclass, false);
+```
+
+São criadas as `constraints` a seguir:
 
 * `enforce_dims_geom`: garante que cada geometria tenha a mesma dimensão;
 
@@ -125,7 +131,6 @@ CREATE TABLE pnt_interesse (
     dt_coleta date,
     geom geometry(POINT, 4326)
 );
-SELECT Populate_Geometry_Columns('public.pnt_interesse'::regclass);
 
 -- **************************************************************************** --
 
@@ -134,7 +139,6 @@ CREATE TABLE adutora (
     descricao varchar(50),
     geom geometry(LINESTRING, 4326)
 );
-SELECT Populate_Geometry_Columns('public.adutora'::regclass);
 
 -- **************************************************************************** --
 
@@ -143,7 +147,6 @@ CREATE TABLE area_estudo (
     nome varchar(50),
     geom geometry(POLYGON, 4326)
 );
-SELECT Populate_Geometry_Columns('public.area_estudo'::regclass);
 ```
 
 ### Exercícios:
