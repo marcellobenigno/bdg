@@ -116,10 +116,45 @@ SELECT AddGeometryColumn('public', 'area_estudo', 'geom', 4326, 'POLYGON', 2);
 
 ```
 
+Ou, através do segundo método:
+
+```sql
+CREATE TABLE pnt_interesse (
+    id serial PRIMARY KEY,
+    nome varchar(100),
+    dt_coleta date,
+    geom geometry(POINT, 4326)
+);
+SELECT Populate_Geometry_Columns('public.pnt_interesse'::regclass);
+
+-- **************************************************************************** --
+
+CREATE TABLE adutora (
+    id serial PRIMARY KEY,
+    descricao varchar(50),
+    geom geometry(LINESTRING, 4326)
+);
+SELECT Populate_Geometry_Columns('public.adutora'::regclass);
+
+-- **************************************************************************** --
+
+CREATE TABLE area_estudo (
+    id serial PRIMARY KEY,
+    nome varchar(50),
+    geom geometry(POLYGON, 4326)
+);
+SELECT Populate_Geometry_Columns('public.area_estudo'::regclass);
+```
+
 ### Exercícios:
 
-1. Crie as tabelas a seguir:
+1. Para as tabelas a seguir:
 
 ![Exercício](../img/fig_exercicio.jpg)
+
+1.1 - Crie as tabelas utilizando a função `AddGeometryColumn`.
+
+1.2 - Apague as tabelas criadas anteriormente e as recrie com o segundo método, em seguida utilize a função `Populate_Geometry_Columns` para cada uma das tabelas criadas.
+
 
 
