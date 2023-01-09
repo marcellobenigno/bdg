@@ -2,7 +2,7 @@
 
 A criação de tabelas com o PostGIS, pode ser feita de duas formas, sendo exemplificadas a seguir:
 
-* Criando a coluna com o tipo de geometria **após** a criação da tabela, com o comando `AddGeometryColumn`:
+* Criando a coluna com o tipo de geometria **após** a criação da tabela, com o comando [`AddGeometryColumn`](https://postgis.net/docs/AddGeometryColumn.html):
 
 
 ```sql
@@ -12,7 +12,7 @@ CREATE TABLE pontos (
 SELECT AddGeometryColumn('public', 'pontos', 'geom', 4326, 'POINT', 2);
 ```
 
-Os parâmetros do comando `AddGeometryColumn` são:
+Os parâmetros do comando [`AddGeometryColumn`](https://postgis.net/docs/AddGeometryColumn.html) são:
 
 ```sql
 SELECT AddGeometryColumn(
@@ -63,14 +63,14 @@ Toda geometria armazenada no PostGIS possui um identificador de referência espa
 
 Os valores de SRID ≠ -1 indicam que os dados estão associados a um sistema de referência.
 
-Para encontrar maiores detalhes sobre SRID, acesse o site: http://spatialreference.org/.
+Para encontrar mais informações sobre Sistemas de Referência Espacial, acesse o site: http://spatialreference.org/.
 
 Alguns Exemplos de SRID:
 
-- SIRGAS2000 LAT / LONG = 4674
+- SIRGAS 2000 LAT / LONG = 4674
 - WGS-84 LAT / LONG = 4326
-- SIRGAS / UTM zone 24S = 31984
-- SIRGAS / UTM zone 25S = 31985
+- SIRGAS 2000 / UTM zone 24S = 31984
+- SIRGAS 2000 / UTM zone 25S = 31985
 
 Já a *view* `geometry_columns` fornece uma listagem de todas as tabelas espaciais registradas e informações básicas sobre as mesmas.
 

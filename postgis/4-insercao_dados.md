@@ -56,8 +56,6 @@ VALUES (st_geomfromtext(
 
 ```
 
-
-
 ### Exercício:
 
 1. Para as tabelas criadas no exercício anterior, insira os registros a seguir:
