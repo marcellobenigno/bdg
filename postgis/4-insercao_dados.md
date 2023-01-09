@@ -1,4 +1,4 @@
-## 4 - Inserção de Dados
+## 4. Inserção de Dados
 
 Neste tópico serão apresentados exemplos de inserção de dados em tabelas espaciais, bem como a utilização da função [`ST_GeomFromText()`](https://postgis.net/docs/ST_GeomFromText.html) que permite esta ação, exemplos:
 

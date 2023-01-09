@@ -1,4 +1,4 @@
-## 3 - Criação de Tabelas Espaciais
+## 3. Criação de Tabelas Espaciais
 
 A criação de tabelas com o PostGIS, pode ser feita de duas formas, sendo exemplificadas a seguir:
 
@@ -67,8 +67,8 @@ Para encontrar mais informações sobre Sistemas de Referência Espacial, acesse
 
 Alguns Exemplos de SRID:
 
-- SIRGAS 2000 LAT / LONG = 4674
-- WGS-84 LAT / LONG = 4326
+- SIRGAS 2000 LAT/LONG = 4674
+- WGS-84 LAT/LONG = 4326
 - SIRGAS 2000 / UTM zone 24S = 31984
 - SIRGAS 2000 / UTM zone 25S = 31985
 
