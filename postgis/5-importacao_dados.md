@@ -32,7 +32,7 @@
 
 **OBS:** Este processo pode ser realizado de forma semelhante pata importar arquivos nos formato `shapefile`
 
-### Passo a passo em vídeo
+### Passo a Passo em Vídeo:
 
 <div align="center">
 
@@ -41,3 +41,8 @@
 Conversão de camadas no formato GeoPackage em tabelas PostGIS | Prof. Marcello Benigno
 
 </div>
+
+
+### Exercício:
+
+1. Importe todas as camadas do GeoPackage deste [link](https://drive.google.com/file/d/1uBAsmt7UW6enTe4miAxVLK5U98BkvCi4/view?usp=share_link), para o BDG `pb`. Para baixar os dados, é necessário que você esteja logado na sua conta do IFPB.
