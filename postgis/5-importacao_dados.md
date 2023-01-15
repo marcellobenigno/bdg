@@ -1,1 +1,43 @@
 ## 5. Importação de Dados Espaciais
+
+### Convertendo Dados no Formato (e shapefile) com o QGIS
+
+1. Com o QGIS aberto, conecte o GeoPackage `pb` com o QGIS, através do clique com o botão direito no mouse em `GeoPackage`, como mostra figura a figura abaixo:
+
+![](../img/conversao_1.jpg)
+
+2. Adicione as camadas que deseja importar ao seu banco no QGIS, neste exemplo, foi adicionada a camada `municipios`:
+
+![](../img/conversao_2.jpg)
+
+3. Habilite a extensão `DB Manager` no menu `Plugins`, na opção `Manage and Install Plugins...`:
+
+![](../img/conversao_3.jpg)
+
+4. Crie uma conexão com o seu banco de dados, clicando com o botão direito do mouse no ícone do PostGIS, no painel `Browser`:
+
+![](../img/conversao_4.jpg)
+
+5. Preencha os parâmetros de conexão, como mostra a figura abaixo:
+
+![](../img/conversao_5.jpg)
+
+6. Abra o `DB Manager`, clique em `Import Layer/File` e Preencha o formulário de importação, como mostra a figura abaixo:
+
+![](../img/conversao_6.jpg)
+
+7. Atualize o Banco de Dados e verifique o resultado. A tabela `municipios` aparecerá no esquema `public`.
+
+![](../img/conversao_7.jpg)
+
+**OBS:** Este processo pode ser realizado de forma semelhante pata importar arquivos nos formato `shapefile`
+
+### Passo a passo em vídeo
+
+<div align="center">
+
+[![](http://img.youtube.com/vi/6WQRTcFF5kg/0.jpg)](http://www.youtube.com/watch?v=6WQRTcFF5kg "Como instalar PostgreSQL com PostGIS no Windows")
+
+Conversão de camadas no formato GeoPackage em tabelas PostGIS | Prof. Marcello Benigno
+
+</div>
