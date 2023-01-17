@@ -1,6 +1,6 @@
 ## 1. Introdução
 
- PostGIS é a extensão espacial do Banco de Dados PostgreSQL que adiciona “capacidades espaciais” ao mesmo, permitindo que esse se torne um repositório de dados para os Sistemas de Informações Geográficas (SIG).
+ O **PostGIS** é a extensão espacial do Banco de Dados PostgreSQL que adiciona “capacidades espaciais” ao mesmo, permitindo que esse se torne um repositório de dados para os Sistemas de Informações Geográficas (SIG).
 
  Isso ocorre nos mesmos moldes
 de soluções proprietárias como o SDE - Spatial Database Engine da ESRI® a extensão Spatial da Oracle® e o Spatial Extender do DB2 da IBM®.
