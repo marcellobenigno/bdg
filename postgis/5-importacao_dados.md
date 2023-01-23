@@ -32,6 +32,10 @@
 
 **OBS:** Este processo pode ser realizado de forma semelhante pata importar arquivos nos formato `shapefile`
 
+### Utilizando o comando `shp2pgsql`:
+
+![](../img/shp2pgsql.jpg)
+
 ### Passo a Passo em Vídeo:
 
 <div align="center">

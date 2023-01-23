@@ -10,6 +10,7 @@ Uma abordagem utilizando o PostgreSQL e a Extensão Espacial PostGIS
 #### [3. Criação de Tabelas Espaciais][3]
 #### [4. Inserção de Dados][4]
 #### [5. Importação de Dados Espaciais][5]
+#### [6. Trabalhando com Projeções][6]
 
 
 [1]:postgis/1-introducao.md
@@ -17,3 +18,4 @@ Uma abordagem utilizando o PostgreSQL e a Extensão Espacial PostGIS
 [3]:postgis/3-criacao_tabelas_espaciais.md
 [4]:postgis/4-insercao_dados.md
 [5]:postgis/5-importacao_dados.md
+[6]:postgis/6-projecoes.md
