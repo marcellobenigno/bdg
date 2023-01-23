@@ -1,6 +1,6 @@
 ## 5. Importação de Dados Espaciais
 
-### Convertendo Dados no Formato (e shapefile) com o QGIS
+### Convertendo Dados no Formato GeoPackage (e shapefile) com o QGIS
 
 1. Com o QGIS aberto, conecte o GeoPackage `pb` com o QGIS, através do clique com o botão direito no mouse em `GeoPackage`, como mostra figura a figura abaixo:
 
@@ -32,11 +32,29 @@
 
 **OBS:** Este processo pode ser realizado de forma semelhante pata importar arquivos nos formato `shapefile`
 
-### Utilizando o comando `shp2pgsql`:
+### Conversão de arquivos shapefile através do comando `shp2pgsql`
 
-![](../img/shp2pgsql.jpg)
+O comando shp2pgsql permite a conversão de shapefiles em arquivos SQL, sua sintaxe básica é a seguinte:
 
-### Passo a Passo em Vídeo:
+```bash
+shp2pgsql -s <SRID> -W <encoding> <caminho-do-shapefile> <nome-da-tabela> > <arquivo_sql_gerado.sql>
+```
+
+Exemplo (Windows):
+
+```bash
+C:\Arquivos de programas\PostgreSQL\9.5\bin\shp2pgsql.exe 
+-s 4674 
+–W "LATIN1"
+C:\temp\municipios_base.shp
+municipios > 
+C:\temp\municipios.sql
+```
+
+Uma vez criado o arquivo `.sql`, basta carregá-lo no PGAdmin, QGIS ou via terminal, com o comando `psql`. 
+
+
+### Convertendo Dados no Formato GeoPackage (e shapefile) com o QGIS - Passo a Passo em Vídeo
 
 <div align="center">
 
