@@ -62,3 +62,33 @@ id  |  nome | geom
 ----+------------------------------------------------------------------------------------------------------------------------
 185 | Patos | MULTIPOLYGON(((6984415.880751882 9168813.491909271,6984617.081563575,...,6984415.880751882 9168813.491909271)))
 
+```
+
+
+### Exercícios:
+
+1. Exiba a geometria da sede de **Cabedelo** em WKT, reprojetando os dados para UTM (SRID=31985).
+
+2. Exiba a geometria do trecho **PB-195/0010** em WKT, reprojetando os dados para UTM (SRID=31984).
+
+3. Crie uma nova tabela com o nome `municipios_5880` a partir da tabela dos municípios com os dados na projeção *SIRGAS 2000 / Brazil Polyconic* (SRID=5880).
+
+4. A partir da tabela `pocos`, realize uma consulta que mostre os seguintes dados:
+
+```
+  id  |             proprietar             |       long        |        lat        |         x          |         y
+------+------------------------------------+-------------------+-------------------+--------------------+-------------------
+ 1793 | Prefeitura Municipal De Santa Rita | -34.9743701325759 | -7.12963082107352 |  281947.4151248357 |  9211454.42324967
+ 1796 | Prefeitura Municipal De Santa Rita | -34.9758701428972 | -7.12485300395984 |  281779.4253809983 | 9211982.194475273
+ 1801 | Prefeitura Municipal De Santa Rita | -34.9597032986761 | -7.07893597984643 |   283544.133283274 |  9217068.69532908
+ 1802 | Prefeitura Municipal De Santa Rita | -34.9612033123317 | -7.07904709083605 | 283378.44039492897 | 9217055.706149789
+ 1803 | Prefeitura Municipal De Santa Rita | -34.9831480732369 | -7.25082623039927 | 281035.68849366327 | 9198044.592548119
+ 1804 | Prefeitura Municipal De Santa Rita | -34.9698006607888 | -7.15016432216079 | 282461.97829699726 | 9209185.350488713
+ 1811 | Prefeitura Municipal De Santa Rita | -34.9697589779756 | -7.12707524816124 | 282455.66803903715 | 9211739.274739217
+ 1812 | Prefeitura Municipal De Santa Rita | -34.8751719161153 | -6.98746863474929 | 292843.68343975255 | 9227223.933036119
+ 1815 | Prefeitura Municipal De Santa Rita | -34.9835645562417 | -6.97549068848409 | 280859.07233702636 |  9228499.73700465
+ 1816 | Prefeitura Municipal De Santa Rita |  -34.903369439297 | -7.05540805107573 | 289758.02688657783 |  9219696.90533202
+
+```
+
+5. Converta todas as geometrias das sedes que estão no fuso 25 Sul para UTM - SIRGAS 2000.
