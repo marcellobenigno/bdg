@@ -11,6 +11,7 @@ Uma abordagem utilizando o PostgreSQL e a Extensão Espacial PostGIS
 #### [4. Inserção de Dados][4]
 #### [5. Importação de Dados Espaciais][5]
 #### [6. Trabalhando com Projeções][6]
+#### [7. Cálculos de Área, Distância e Comprimento][7]
 
 
 [1]:postgis/1-introducao.md
@@ -19,3 +20,4 @@ Uma abordagem utilizando o PostgreSQL e a Extensão Espacial PostGIS
 [4]:postgis/4-insercao_dados.md
 [5]:postgis/5-importacao_dados.md
 [6]:postgis/6-projecoes.md
+[7]:postgis/7-calculos_area_dist_comp.md
