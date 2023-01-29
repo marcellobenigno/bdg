@@ -81,17 +81,21 @@ AND b.nome = 'Campina Grande';
 ```
 
 ```sql
-/* Qual é a menor distância entre os poços cujo proprietário é
-"Prefeitura Municipal De Pedras De Fogo" e a Sede desta mesma prefeitura?
-Ordene o resultado pela distância */
-SELECT p.id,
-	   p.proprietar,
-	   ST_Distance(p.geom::geography, s.geom::geography) AS menor_dist_m
-FROM pocos p,
-     sedes s
-WHERE p.proprietar = 'Prefeitura Municipal De Pedras De Fogo'
-  AND s.nome = 'Pedras de Fogo'
-ORDER BY menor_dist_m;
+/* Qual é a menor distância entre os poços onde o proprietário é
+"Prefeitura Municipal De Pedras De Fogo" e a sede desta mesma prefeitura?
+Ordene o resultado pela distância, exibindo os campos id e proprietar da tabela pocos */
+SELECT
+	p.id,
+	p.proprietar,
+	ST_Distance(p.geom::geography, s.geom::geography) AS menor_dist_m
+FROM
+	pocos p,
+	sedes s
+WHERE
+	p.proprietar = 'Prefeitura Municipal De Pedras De Fogo'
+AND 	s.nome = 'Pedras de Fogo'
+ORDER BY 
+	menor_dist_m;
 ```
 
 ```
