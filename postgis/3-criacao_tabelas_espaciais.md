@@ -79,17 +79,20 @@ Já a *view* `geometry_columns` fornece uma listagem de todas as tabelas espacia
 
 ![tipos de geometria](../img/tipos_geometria.png)
 
-#### Representação de geometrias no formato Well-known text (WKT)
+### Representação de geometrias nos formatos Well-known Binary e Well-known text (WKT)
 
-```
-POINT(0 0)
-LINESTRING(0 0,1 1,1 2)
-POLYGON((0 0,4 0,4 4,0 4,0 0),(1 1, 2 1, 2 2, 1 2,1 1))
-MULTIPOINT((0 0),(1 2))
-MULTILINESTRING((0 0,1 1,1 2),(2 3,3 2,5 4))
-MULTIPOLYGON(((0 0,4 0,4 4,0 4,0 0),(1 1,2 1,2 2,1 2,1 1)),((-1 -1,-1 -2,-2 -2,-2 -1,-1 -1)))
-GEOMETRYCOLLECTION(POINT(2 3),LINESTRING(2 3,3 4))
-```
+A especificação da OGC define duas formas padrão de expressar objetos espaciais: *Well-Known Text (WKT)* e *Well-Known Binary (WKB)*:
+
+* A representação WKB é mais compacta e aparece nas colunas geométricas das tabelas PostGIS:
+
+![](../img/wkb.png)
+
+* A representação WKT separa vértices com vírgulas e parênteses para envolver os vértices. A quantidade de parênteses utilizado vai depender do tipo de geometria:
+
+![](../img/geometry_primitives.png)
+![](../img/multipart.png)
+
+
 ### Exemplos:
 
 #### Crie as tabelas a seguir:
