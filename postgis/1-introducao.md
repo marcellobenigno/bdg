@@ -13,7 +13,25 @@ Devido à sua aderência pelo formato SFSQL, o PostGIS torna-se uma ferramenta c
 por usar funções padronizadas e abertas ao manipular os dados espaciais. Com isso muitas aplicações (Mapserver, ArcGIS, QGIS, GeoServer, etc.) podem lidar com o PostGIS e acessar/manipular seus
 dados.
 
-![intro](../img/intro.png)
+![intro](../img/compatibilidade.png)
+
+
+### Bibliotecas Utilizadas pela Extensão
+
+![](../img/bibliotecas.jpg)
+
+
+### Vantagens da Utilização de um BGD em Relação aos Formatos convencionais:
+
+* Diminuição da redundância;
+* Melhoria da integridade dos dados;
+* Acesso multiusuário;
+* Definição de regras de acesso e de segurança;
+* Criação de backups;
+* Uso de triggers e procedures;
+* Uso de views;
+* Índices espaciais;
+* Suporte a dados raster.
 
 
 ## Instalação
@@ -27,7 +45,7 @@ Como instalar PostgreSQL com PostGIS no Windows | Leandro França - GeoOne
 </div>
 
 
-## Criando um Banco de Dados Geográficos
+## Como criar um Banco de Dados Geográficos
 
 ### Através de linha de comando:
 
