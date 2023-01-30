@@ -7,6 +7,10 @@ Uma das características mais relevantes dos Bancos de Dados Geográficos, é a 
 
 Testa se duas geometrias são iguais:
 
+<div align=center>
+	<img src="../img/img_st_equals.jpg" width="600px" />
+</div>
+
 
 ```sql
 /* Qual é a sede que possui a geometria igual ao ponto com
@@ -28,6 +32,10 @@ WHERE ST_Equals(geom, ST_GeomFromText('POINT(-37.958771071678186 -7.014295589558
 ### [ST_Intersects](https://postgis.net/docs/ST_Intersects.html)
 
 Compara duas geometrias e retorna verdadeiro se elas se intersectarem (se tiverem algum ponto em comum):
+
+<div align=center>
+	<img src="../img/img_st_intersects.jpg" width="600px" />
+</div>
 
 ```sql
 -- Quais são os trechos de rodovias que intersectam o município de Guarabira?
@@ -53,3 +61,30 @@ ORDER BY codigo;
 ```
 
 ![](../img/st_intersects.jpg)
+
+
+### [ST_Disjoint](https://postgis.net/docs/ST_Disjoint.html)
+
+É o oposto da função ST_Intersects, ST_Disjoint verifica se duas geometrias são disjuntas, ou seja, não possuem nenhum ponto em comum:
+
+<div align=center>
+	<img src="../img/img_st_disjoint.jpg" width="600px" />
+</div>
+
+
+```sql
+-- Quais são os municípios que não fazem fronteira com o município de Taperoá?
+SELECT a.id, a.nome
+FROM municipios a,
+     municipios b
+WHERE ST_Disjoint(a.geom, b.geom)
+  AND b.nome = 'Taperoá';
+```
+
+![](../img/st_disjoint.jpg)
+
+
+
+
+
+
