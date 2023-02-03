@@ -164,3 +164,41 @@ WHERE ST_Overlaps(a.geom, b.geom)
 ```
 
 ![](../img/st_overlaps.jpg)
+
+
+### [ST_Touches](https://postgis.net/docs/ST_Touches.html)
+
+Compara se duas geometrias se tocam em seus limites, mas não se cruzam em seus interiores.
+
+<div align=center>
+  <img src="../img/img_st_touches.jpg" width="500px" />
+</div>
+
+
+```sql
+-- Quais são os municípios que fazem fronteira com Campina Grande?
+SELECT a.id, a.nome
+FROM municipios a,
+     municipios b
+WHERE ST_Touches(a.geom, b.geom)
+  AND b.nome = 'Campina Grande';
+```
+
+```
+ id  |         nome
+-----+----------------------
+   4 | Boqueirão
+   9 | Lagoa Seca
+  16 | Queimadas
+  48 | Boa Vista
+  61 | Caturité
+ 147 | Puxinanã
+ 159 | Fagundes
+ 164 | Ingá
+ 176 | Massaranduba
+ 203 | Riachão do Bacamarte
+ 192 | Pocinhos
+
+```
+
+![](../img/st_touches.jpg)
