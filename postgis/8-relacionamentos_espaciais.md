@@ -205,7 +205,7 @@ WHERE ST_Touches(a.geom, b.geom)
 
 ### [ST_Contains](https://postgis.net/docs/ST_Contains.html) e [ST_Within](https://postgis.net/docs/ST_Within.html)
 
-ST_Within e ST_Contains testam se uma geometria está totalmente dentro da outra.
+ST_Contains e ST_Within testam se uma geometria está totalmente dentro da outra. O que muda de uma função para a outra, é o contexto da análise.
 
 <div align=center>
   <img src="../img/img_st_contains.jpg" width="500px" />
@@ -270,7 +270,7 @@ SELECT p.id,
         ) / 1000 AS distancia_km
 FROM pocos p,
      sedes s
-WHERE st_dwithin(s.geom::geography, p.geom::geography, 10000)
+WHERE ST_DWithin(s.geom::geography, p.geom::geography, 10000)
   AND s.nome = 'Piancó'
 ORDER BY distancia_km;
 ```
@@ -292,3 +292,14 @@ ORDER BY distancia_km;
 ```
 
 ![](../img/st_dwithin.jpg)
+
+### Exercícios:
+
+1. Quais são os rios que intersectam o município de Campina Grande?
+2. Quais são os municípios que **não** fazem fronteira com o município de Patos?
+3. Quais são os municípios que fazem fronteira com o município de João Pessoa?
+4. Quais são os poços que estão dentro do município de Pombal?
+5. Quais são os poços que estão a 15 km da sede de Patos? Ordene o resultado pela distância.
+6. Quais são os municípios que intersectam a PB-008? 
+7. Quanto é a soma total dos comprimentos dos rios que estão contidos pela microrregião do Agreste Paraibano?
+8. Qual é a densidade populacional dos setores censitários que são cruzados pelo Rio Paraíba? 
