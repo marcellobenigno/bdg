@@ -202,3 +202,93 @@ WHERE ST_Touches(a.geom, b.geom)
 ```
 
 ![](../img/st_touches.jpg)
+
+### [ST_Contains](https://postgis.net/docs/ST_Contains.html) e [ST_Within](https://postgis.net/docs/ST_Within.html)
+
+ST_Within e ST_Contains testam se uma geometria está totalmente dentro da outra.
+
+<div align=center>
+  <img src="../img/img_st_contains.jpg" width="500px" />
+</div>
+
+```sql
+-- Quantos poços estão localizados dentro da microrregião do "Cariri Ocidental"?
+SELECT m.microregiao, COUNT(p.*) AS total_pocos
+FROM pocos p,
+     municipios m
+WHERE ST_Within(p.geom, m.geom)
+  AND m.microregiao = 'Cariri Ocidental'
+GROUP BY microregiao
+```
+
+```
+   microregiao    | total_pocos
+------------------+-------------
+ Cariri Ocidental |         332
+```
+
+![](../img/st_within.jpg)
+
+```sql
+/* Qual é a soma total do campo "DensidPop" (Densidade Populacional)
+de todos os polígonos da tabela densidade_pb que estão dentro do
+município de João Pessoa? */
+SELECT m.nome, 
+       SUM(d."DensidPop") AS soma_densidade_populacional
+FROM densidade_pb d,
+     municipios m
+WHERE ST_Contains(m.geom, d.geom)
+  AND m.nome = 'João Pessoa'
+GROUP BY m.nome;
+```
+
+```
+    nome     | soma_densidade_populacional
+-------------+-----------------------------
+ João Pessoa | 9512410.090000002
+```
+
+
+### [ST_DWithin](https://postgis.net/docs/ST_DWithin.html)
+
+Calcula os registros que estão a uma distância especificada.
+
+<div align=center>
+  <img src="../img/img_st_dwithin.jpg" width="600px" />
+</div>
+
+
+```sql
+/* Retorne as coordenadas e as distâncias de todos os poços que estão a uma distância de 10 km 
+da sede de Piancó, ordenados da menor para a maior distância */
+SELECT p.id,
+       ST_X(p.geom) AS longitude,
+       ST_Y(p.geom) AS latitude,
+       ST_Distance(
+            s.geom::geography,
+            p.geom::geography
+        ) / 1000 AS distancia_km
+FROM pocos p,
+     sedes s
+WHERE st_dwithin(s.geom::geography, p.geom::geography, 10000)
+  AND s.nome = 'Piancó'
+ORDER BY distancia_km;
+```
+
+```
+  id  |     longitude     |     latitude      |    distancia_km
+------+-------------------+-------------------+--------------------
+  867 | -37.9342299967013 | -7.20401807371753 |      0.90092213921
+  827 | -37.9253409238215 | -7.21068513179489 |      0.97264929161
+  866 | -37.9420080710579 | -7.21235113221429 |      2.07799676273
+  835 |  -37.953119171486 | -7.21651815606339 |      3.36804628425
+  860 | -37.9183968185254 | -7.15096267582719 |      5.70631125172
+  830 | -37.8711734282518 | -7.18262895545261 |      6.45690143789
+ 1354 | -37.9547852148656 | -7.25485145040088 |  6.640799657520001
+ 1353 | -37.9670082444243 |  -7.1512396419904 | 7.1849956935199994
+  864 |  -37.851729258835 | -7.18401798060996 |      8.47598381505
+  833 | -37.9578412552455 | -7.27290758726402 |  8.584179029749999
+  834 | -37.9497850679299 |  -7.1165173865415 |      9.79626468362
+```
+
+![](../img/st_dwithin.jpg)
