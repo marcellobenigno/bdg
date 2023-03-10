@@ -65,7 +65,7 @@ ORDER BY codigo;
 
 ### [ST_Disjoint](https://postgis.net/docs/ST_Disjoint.html)
 
-É o oposto da função ST_Intersects, ST_Disjoint verifica se duas geometrias são disjuntas, ou seja, não possuem nenhum ponto em comum:
+É o oposto da função `ST_Intersects`, `ST_Disjoint`` verifica se duas geometrias são disjuntas, ou seja, não possuem nenhum ponto em comum:
 
 <div align=center>
 	<img src="../img/img_st_disjoint.jpg" width="500px" />
@@ -205,7 +205,7 @@ WHERE ST_Touches(a.geom, b.geom)
 
 ### [ST_Contains](https://postgis.net/docs/ST_Contains.html) e [ST_Within](https://postgis.net/docs/ST_Within.html)
 
-ST_Contains e ST_Within testam se uma geometria está totalmente dentro da outra. O que muda de uma função para a outra, é o contexto da análise.
+`ST_Contains` e `ST_Within` testam se uma geometria está totalmente dentro da outra. O que muda de uma função para a outra, é o contexto da análise.
 
 <div align=center>
   <img src="../img/img_st_contains.jpg" width="500px" />

@@ -23,3 +23,4 @@ Uma abordagem utilizando o PostgreSQL e a Extensão Espacial PostGIS
 [6]:postgis/6-projecoes.md
 [7]:postgis/7-calculos_area_dist_comp.md
 [8]:postgis/8-relacionamentos_espaciais.md
+[9]:postgis/9-novas_geometrias.md
