@@ -1,10 +1,13 @@
+
 ## 9. Funções que Geram Novas Geometrias
 
 As funções de construção de geometria permitem a criação de objetos geométricos, como pontos, linhas e polígonos. Nesta seção iremos explorar o uso das principais funções que se destinam a esse propósito.
 
 ### [ST_Centroid](https://postgis.net/docs/ST_Centroid.html) / [ST_PointOnSurface](https://postgis.net/docs/ST_PointOnSurface.html)
 
-![ST_Centroid - ST_PointOnSurface](../img/img_st_centroid.jpg)
+<div align=center>
+<img src="../img/img_st_centroid.jpg" width="500px" />
+</div>
 
 A função `ST_Centroid` é usada para calcular o centróide (ou centro de massa) de um objeto geométrico. É importante ressaltar que o centróide não precisa estar localizado dentro do objeto geométrico em si.
 
@@ -53,12 +56,82 @@ AND b.rodovia_nome = 'BR-230';
 ![ST_PointOnSurface](../img/st_pointonsurface.jpg)
 
 
+### [ST_Buffer](https://postgis.net/docs/ST_Buffer.html)
+
+Gera uma área de influência ao redor de um objeto geométrico. A área de influência é criada por meio da expansão do objeto em uma determinada distância, especificada em unidades de medida.
+
+<div align=center>
+<img src="../img/img_st_buffer.jpg" width="700px" />
+</div>
+
+
+```sql
+-- Gere um buffer de 1 km em torno dos trechos do rio Paraíba.
+SELECT id, ST_Buffer(geom::GEOGRAPHY, 1000)::GEOMETRY AS geom
+FROM drenagem
+WHERE nome = 'Rio Paraíba';
+```
+
+```
+ id   |                        geom
+------+--------------------------------------------------------
+31099 | 0103000020E6100000010000009F040000758E1BDCE10042C0F20B
+30654 | 0103000020E610000001000000990000001DB620A95FC741C0FE7D
+30653 | 0103000020E610000001000000F200000036AEE504420F42C0C02C
+...
+```
+
+
+![ST_Buffer](../img/st_buffer.jpg)
+
+
+
+
+💡 A **unidade** do raio de influência do buffer é definida em função do **SRID** da tabela, neste caso do exemplo, os dados estão em coordenadas geográficas (SRID=4326). Então é utilizado o recurso do **casting** para `GEOGRAPHY`, e assim poder especificar a distância em metros e em seguida, o casting para `GEOMETRY`, para poder realizar análises topológicas com outras tabelas, caso seja necessário.
+
+
+### [ST_Union](https://postgis.net/docs/ST_Union.html)
+
+Permite combinar dois ou mais objetos geométricos em um único objeto geométrico, que representa a união ou agregação dos objetos originais.
+
+<div align=center>
+<img src="../img/img_st_union.png" width="800px" />
+</div>
+
+
+
+
+
+```sql
+-- Repetir a consulta anterior, porém gerando primeiro a união dos trechos que compõem o rio Paraíba.
+WITH rio_paraiba_union AS (
+    SELECT ST_Union(geom) AS geom
+    FROM drenagem
+    WHERE nome = 'Rio Paraíba'
+)
+SELECT ROW_NUMBER() OVER ()::int AS id,
+       ST_Buffer(geom::geography, 1000)::geometry AS geom
+FROM rio_paraiba_union;
+```
+
+```
+ id |                        geom
+----+--------------------------------------------------------
+  1 | 0103000020E61000000100000047170000847BA218E26242C0880C1
+```
+
+
+![ST_Union](../img/img_union.jpg)
+
+
 
 
 ### Exercícios:
 
 1. Gere centróides para os municípios da microrregião do Piancó.
-
 2. Gere pontos na superfície para os polígonos da camada `densidade_pb` que estão localizados na mesorregião do Sertão Paraibano.
+3. Crie um buffer de 2km para a rodovia BR-230.
+4. Repita o procedimento anterior, unindo antes os trechos de rodovia.
+
 
 
