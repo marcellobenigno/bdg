@@ -1,4 +1,3 @@
-
 ## 9. Funções que Geram Novas Geometrias
 
 As funções de construção de geometria permitem a criação de objetos geométricos, como pontos, linhas e polígonos. Nesta seção iremos explorar o uso das principais funções que se destinam a esse propósito.
@@ -6,7 +5,7 @@ As funções de construção de geometria permitem a criação de objetos geomé
 ### [ST_Centroid](https://postgis.net/docs/ST_Centroid.html) / [ST_PointOnSurface](https://postgis.net/docs/ST_PointOnSurface.html)
 
 <div align=center>
-<img src="../img/img_st_centroid.jpg" width="500px" />
+<img src="../img/img_st_centroid.jpg" width="450px" />
 </div>
 
 A função `ST_Centroid` é usada para calcular o centróide (ou centro de massa) de um objeto geométrico. É importante ressaltar que o centróide não precisa estar localizado dentro do objeto geométrico em si.
@@ -55,13 +54,12 @@ AND b.rodovia_nome = 'BR-230';
 
 ![ST_PointOnSurface](../img/st_pointonsurface.jpg)
 
-
 ### [ST_Buffer](https://postgis.net/docs/ST_Buffer.html)
 
 Gera uma área de influência ao redor de um objeto geométrico. A área de influência é criada por meio da expansão do objeto em uma determinada distância, especificada em unidades de medida.
 
 <div align=center>
-<img src="../img/img_st_buffer.jpg" width="700px" />
+<img src="../img/img_st_buffer.jpg" width="600px" />
 </div>
 
 
@@ -81,14 +79,9 @@ WHERE nome = 'Rio Paraíba';
 ...
 ```
 
-
 ![ST_Buffer](../img/st_buffer.jpg)
 
-
-
-
 💡 A **unidade** do raio de influência do buffer é definida em função do **SRID** da tabela, neste caso do exemplo, os dados estão em coordenadas geográficas (SRID=4326). Então é utilizado o recurso do **casting** para `GEOGRAPHY`, e assim poder especificar a distância em metros e em seguida, o casting para `GEOMETRY`, para poder realizar análises topológicas com outras tabelas, caso seja necessário.
-
 
 ### [ST_Union](https://postgis.net/docs/ST_Union.html)
 
@@ -97,10 +90,6 @@ Permite combinar dois ou mais objetos geométricos em um único objeto geométri
 <div align=center>
 <img src="../img/img_st_union.png" width="800px" />
 </div>
-
-
-
-
 
 ```sql
 -- Repetir a consulta anterior, porém gerando primeiro a união dos trechos que compõem o rio Paraíba.
@@ -120,11 +109,48 @@ FROM rio_paraiba_union;
   1 | 0103000020E61000000100000047170000847BA218E26242C0880C1
 ```
 
-
 ![ST_Union](../img/img_union.jpg)
 
 
+```sql
+-- crie os polígonos das mesorregiões a partir do campo 'mesoregiao' da tabela municipios.
+SELECT ROW_NUMBER() OVER ()::int AS id,
+       mesoregiao,
+       ST_Union(geom) AS geom
+FROM municipios
+GROUP BY mesoregiao;
+```
 
+![ST_Union 2](../img/img_st_union2.jpg)
+
+### ST_Intersection
+
+Calcula a interseção entre duas geometrias. O resultado da função é uma nova geometria que representa a área de interseção entre os dois objetos.
+
+<div align=center>
+<img src="../img/img_intersection.jpg" width="800px" />
+</div>
+
+```sql
+/* Calcule a área de interseção entre o buffer do Rio Paraíba e os municípios. 
+Calcule também a área recortada em hectares de cada município e ordene 
+o resultado da maior para a menor área. */
+SELECT m.id,
+       m.nome,
+       (ST_Area(ST_Intersection(m.geom, b.geom)::geography) / 50000)::numeric(10, 2) AS area_ha,
+       ST_Intersection(m.geom, b.geom) AS geom
+FROM municipios m, (
+        SELECT ST_Buffer(ST_Union(geom)::geography, 5000)::geometry AS geom
+        FROM drenagem
+        WHERE nome = 'Rio Paraíba'
+) AS b
+WHERE ST_Intersects(m.geom, b.geom)
+ORDER BY area_ha DESC;
+```
+
+![ST_Intersection](../img/st_intersection.jpg)
+
+![ST_Intersection](../img/st_intersection2.jpg)
 
 ### Exercícios:
 
@@ -132,6 +158,4 @@ FROM rio_paraiba_union;
 2. Gere pontos na superfície para os polígonos da camada `densidade_pb` que estão localizados na mesorregião do Sertão Paraibano.
 3. Crie um buffer de 2km para a rodovia BR-230.
 4. Repita o procedimento anterior, unindo antes os trechos de rodovia.
-
-
-
+5. Calcule a área de interseção entre o buffer da rodovia BR-230 e os municípios. Adicione a consulta o valor da área recortada em hectares de cada município e ordene o resultado da maior para a menor área.

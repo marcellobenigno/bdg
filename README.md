@@ -13,6 +13,7 @@ Uma abordagem utilizando o PostgreSQL e a Extensão Espacial PostGIS
 #### [6. Trabalhando com Projeções][6]
 #### [7. Cálculos de Área, Perímetro, Distância e Comprimento][7]
 #### [8. Relacionamentos Espaciais][8]
+#### [9. Funções que Geram Novas Geometrias][9]
 
 
 [1]:postgis/1-introducao.md
