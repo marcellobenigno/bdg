@@ -137,7 +137,7 @@ Calcule também a área recortada em hectares de cada município e ordene
 o resultado da maior para a menor área. */
 SELECT m.id,
        m.nome,
-       (ST_Area(ST_Intersection(m.geom, b.geom)::geography) / 50000)::numeric(10, 2) AS area_ha,
+       (ST_Area(ST_Intersection(m.geom, b.geom)::geography) / 10000)::numeric(10, 2) AS area_ha,
        ST_Intersection(m.geom, b.geom) AS geom
 FROM municipios m, (
         SELECT ST_Buffer(ST_Union(geom)::geography, 5000)::geometry AS geom
