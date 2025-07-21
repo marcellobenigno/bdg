@@ -293,13 +293,37 @@ ORDER BY distancia_km;
 
 ![](../img/st_dwithin.jpg)
 
+
+---
+
+## 📊 Tabela Comparativa das Funções Espaciais
+
+| Função         | Relação Espacial          | Resultado esperado                                   |
+|----------------|---------------------------|------------------------------------------------------|
+| `ST_Equals`    | Igualdade total           | Geometrias idênticas                                 |
+| `ST_Intersects`| Qualquer interseção       | Qualquer ponto em comum                              |
+| `ST_Disjoint`  | Totalmente separadas      | Nenhum ponto em comum                                |
+| `ST_Crosses`   | Cruza parcialmente        | Ex: linha cruzando polígono                          |
+| `ST_Overlaps`  | Sobreposição parcial      | Mesma dimensão, mas diferentes                       |
+| `ST_Touches`   | Se tocam nas bordas       | Fronteiras em comum, interiores não se cruzam        |
+| `ST_Contains`  | Contém totalmente         | A envolve B                                          |
+| `ST_Within`    | Está contido              | A está dentro de B                                   |
+| `ST_DWithin`   | Proximidade (buffer)      | Está dentro de uma distância especificada            |
+
+---
+
 ### Exercícios:
 
 1. Quais são os rios que intersectam o município de Campina Grande?
-2. Quais são os municípios que **não** fazem fronteira com o município de Patos?
+2. Quais são os municípios que não fazem fronteira com o município de Patos?
 3. Quais são os municípios que fazem fronteira com o município de João Pessoa?
 4. Quais são os poços que estão dentro do município de Pombal?
 5. Quais são os poços que estão a 15 km da sede de Patos? Ordene o resultado pela distância.
 6. Quais são os municípios que intersectam a PB-008? 
 7. Quanto é a soma total dos comprimentos dos rios que estão contidos pela microrregião do Agreste Paraibano?
-8. Qual é a densidade populacional dos setores censitários que são cruzados pelo Rio Paraíba? 
+8. Qual é a densidade populacional dos setores censitários que são cruzados pelo Rio Paraíba?
+9. Liste os municípios que têm ao menos um trecho da **BR-104** dentro do seu território.
+10. Quais são os rios que cruzam o município de Sousa?
+11. Quais municípios estão a até 20 km da sede de Campina Grande?
+12. Calcule a soma da área dos setores censitários que cruzam com a rodovia BR-230.
+13. Quais municípios estão totalmente contidos dentro da microrregião do Sertão Paraibano?
