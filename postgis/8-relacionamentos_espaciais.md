@@ -181,7 +181,8 @@ SELECT a.id, a.nome
 FROM municipios a,
      municipios b
 WHERE ST_Touches(a.geom, b.geom)
-  AND b.nome = 'Campina Grande';
+  AND b.nome = 'Campina Grande'
+  AND a.nome <> 'Campina Grande';
 ```
 
 ```
