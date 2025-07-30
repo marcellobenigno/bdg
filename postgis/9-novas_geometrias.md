@@ -152,6 +152,41 @@ ORDER BY area_ha DESC;
 
 ![ST_Intersection](../img/st_intersection2.jpg)
 
+### ST_Difference
+
+Calcula a diferença espacial entre duas geometrias. Retorna a parte da primeira geometria que não está na segunda.
+
+<div align=center> <img src="https://i.sstatic.net/XXgBN.png" width="600px" /> </div>
+
+
+```sql
+-- Calcule a parte do município de Barra de Santana que não é afetada por um buffer de 4km em torno do Rio Paraíba.
+SELECT m.id,
+       m.nome,
+       ST_Difference(m.geom, b.geom) AS geom
+FROM municipios m, (
+    SELECT ST_Buffer(ST_Union(geom)::geography, 4000)::geometry AS geom
+    FROM drenagem
+    WHERE nome = 'Rio Paraíba'
+) b
+WHERE m.nome = 'Barra de Santana';
+```
+<div align=center> <img src="https://i.imgur.com/hLy8Pu6.png" width="700px" /> </div>
+
+
+### ST_ConvexHull
+
+Gera o envelope convexo (menor polígono convexo possível) que envolve uma geometria. Muito útil para análises espaciais que exigem delimitação rápida de áreas.
+
+```sql
+-- Gere o convex hull dos poços que estão dentro do município de Patos
+SELECT ST_ConvexHull(ST_Union(p.geom)) AS geom
+FROM pocos p
+JOIN municipios m ON ST_Contains(m.geom, p.geom)
+WHERE m.nome = 'Patos';
+```
+<div align=center> <img src="https://i.imgur.com/kswdh21.png" width="700px" /> </div>
+
 ### Exercícios:
 
 1. Gere centróides para os municípios da microrregião do Piancó.
@@ -159,3 +194,8 @@ ORDER BY area_ha DESC;
 3. Crie um buffer de 2km para a rodovia BR-230.
 4. Repita o procedimento anterior, unindo antes os trechos de rodovia.
 5. Calcule a área de interseção entre o buffer da rodovia BR-230 e os municípios. Adicione a consulta o valor da área recortada em hectares de cada município e ordene o resultado da maior para a menor área.
+6. Crie uma única geometria que represente a Mesorregião da Borborema.
+7. Gerar uma única área de influência com raio de 700 metros, ao redor dos poços localizados em João Pessoa. Utilize as funções ST_Buffer e ST_Union para isso.
+8. Prove que a área de interseção entre a mesorregião da Mata Paraibana e a da Borborema é igual a zero.
+9. Encontre as geometrias dos municípios cortados pela BR-230 que não estão dentro de um buffer de 1 km da rodovia. Use as funções ST_Difference e ST_Buffer.
+10. Para cada microrregião do estado que possui poços, gere o envoltório convexo (ST_ConvexHull) dos poços contidos em seus limites e calcule a área resultante em hectares, excluindo as microrregiões cujo convex hull tenha área igual a zero.
