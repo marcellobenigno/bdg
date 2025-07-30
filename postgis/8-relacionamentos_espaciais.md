@@ -323,8 +323,8 @@ ORDER BY distancia_km;
 6. Quais são os municípios que intersectam a PB-008? 
 7. Quanto é a soma total dos comprimentos dos rios que estão contidos pela microrregião do Agreste Paraibano?
 8. Qual é a densidade populacional dos setores censitários que são cruzados pelo Rio Paraíba?
-9. Liste os municípios que têm ao menos um trecho da **BR-104** dentro do seu território.
+9. Liste os municípios que têm ao menos um trecho da BR-104 dentro do seu território.
 10. Quais são os rios que cruzam o município de Sousa?
 11. Quais municípios estão a até 20 km da sede de Campina Grande?
 12. Calcule a soma da área dos setores censitários que cruzam com a rodovia BR-230.
-13. Quais municípios estão totalmente contidos dentro da microrregião do Sertão Paraibano?
+13. Quais são os municípios da microrregião do Sertão Paraibano que possuem pelo menos 10 poços?
