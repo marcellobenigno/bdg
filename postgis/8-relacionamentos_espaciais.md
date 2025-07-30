@@ -327,4 +327,4 @@ ORDER BY distancia_km;
 10. Quais são os rios que cruzam o município de Sousa?
 11. Quais municípios estão a até 20 km da sede de Campina Grande?
 12. Calcule a soma da área dos setores censitários que cruzam com a rodovia BR-230.
-13. Quais são os municípios da microrregião do Sertão Paraibano que possuem pelo menos 10 poços?
+13. Quais são os municípios da mesorregião do Sertão Paraibano que possuem pelo menos 10 poços?
