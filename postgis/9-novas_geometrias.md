@@ -199,6 +199,39 @@ FROM municipios m, (
 ) b
 WHERE m.nome = 'Barra de Santana';
 ```
+Ou, utilizando CTE:
+
+```sql
+WITH rio_paraiba_buffer AS (
+    SELECT 
+        ST_Buffer(ST_Union(geom)::geography, 4000)::geometry AS geom
+    FROM drenagem
+    WHERE nome = 'Rio Paraíba'
+),
+barra_de_santana AS (
+    SELECT 
+        id,
+        nome,
+        geom
+    FROM municipios
+    WHERE nome = 'Barra de Santana'
+),
+parte_nao_afetada AS (
+    SELECT 
+        m.id,
+        m.nome,
+        ST_Difference(m.geom, b.geom) AS geom
+    FROM barra_de_santana m
+    JOIN rio_paraiba_buffer b ON ST_Intersects(m.geom, b.geom)
+)
+
+SELECT 
+    id,
+    nome,
+    geom
+FROM parte_nao_afetada;
+```
+
 <div align=center> <img src="https://i.imgur.com/hLy8Pu6.png" width="700px" /> </div>
 
 
