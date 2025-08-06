@@ -148,6 +148,34 @@ WHERE ST_Intersects(m.geom, b.geom)
 ORDER BY area_ha DESC;
 ```
 
+Ou utilizando CTE:
+
+```sql
+WITH rio_paraiba_buffer AS (
+    SELECT 
+        ST_Buffer(ST_Union(geom)::geography, 5000)::geometry AS geom
+    FROM drenagem
+    WHERE nome = 'Rio Paraíba'
+),
+intersecoes AS (
+    SELECT 
+        m.id,
+        m.nome,
+        ST_Intersection(m.geom, b.geom)::geometry AS geom_intersec,
+        ST_Area(ST_Intersection(m.geom, b.geom)::geography) / 10000 AS area_ha
+    FROM municipios m
+    JOIN rio_paraiba_buffer b ON ST_Intersects(m.geom, b.geom)
+)
+
+SELECT 
+    id,
+    nome,
+    ROUND(area_ha, 2) AS area_ha,
+    geom_intersec AS geom
+FROM intersecoes
+ORDER BY area_ha DESC;
+```
+
 ![ST_Intersection](../img/st_intersection.jpg)
 
 ![ST_Intersection](../img/st_intersection2.jpg)
