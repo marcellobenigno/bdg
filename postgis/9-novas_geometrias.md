@@ -132,7 +132,7 @@ Calcula a interseção entre duas geometrias. O resultado da função é uma nov
 </div>
 
 ```sql
-/* Calcule a área de interseção entre o buffer do Rio Paraíba e os municípios. 
+/* Calcule a área de interseção entre o buffer de 5km do Rio Paraíba e os municípios. 
 Calcule também a área recortada em hectares de cada município e ordene 
 o resultado da maior para a menor área. */
 SELECT m.id,
