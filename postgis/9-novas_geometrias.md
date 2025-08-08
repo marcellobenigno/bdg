@@ -170,7 +170,7 @@ intersecoes AS (
 SELECT 
     id,
     nome,
-    ROUND(area_ha, 2) AS area_ha,
+    area_ha::numeric(10, 2) AS area_ha,
     geom_intersec AS geom
 FROM intersecoes
 ORDER BY area_ha DESC;
