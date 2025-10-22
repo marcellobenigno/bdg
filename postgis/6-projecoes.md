@@ -71,7 +71,7 @@ id  |  nome | geom
 
 2. Exiba a geometria do trecho **PB-195/0010** em WKT, reprojetando os dados para UTM (SRID=31984).
 
-3. Pesquise no Google como criar uma nova tabela com o nome `municipios_5880` a partir da tabela dos municípios, com os dados na projeção *SIRGAS 2000 / Brazil Polyconic* (SRID=5880) (Dica: CREATE TABLE AS SELECT ...).
+3. Pesquise no Google como criar uma nova tabela com o nome `municipios_5880` a partir da tabela dos municípios, com os dados na projeção *SIRGAS 2000 / Brazil Polyconic* (SRID=5880) (Dica: CREATE TABLE municipios_5880 AS SELECT ...).
 
 4. A partir da tabela `pocos`, realize uma consulta que mostre os seguintes dados do município de Santa Rita:
 
