@@ -104,7 +104,6 @@ id  |  nome | geom
 | **Brazil Polyconic (SIRGAS 2000)** | **5880**  | Metros                | **Mapas estaduais ou regionais**                                             | Projeção que **minimiza distorções** em áreas grandes, ideal para **mapas de síntese** ou representações de **todo o território estadual/nacional**. Menos precisa para análises locais.                                                                   |
 
 
-
 ## Exercícios
 
 ### 1. Sede de Cabedelo em UTM
@@ -112,12 +111,10 @@ Exiba a geometria da sede de **Cabedelo** em formato WKT, reprojetando os dados 
 
 **Dica:** Combine `ST_AsText` com `ST_Transform`.
 
----
 
 ### 2. Rodovia PB-195 em UTM
 Exiba a geometria do trecho **PB-195/0010** em WKT, reprojetando os dados para UTM Zona 24S (SRID=31984).
 
----
 
 ### 3. Criar Tabela com Nova Projeção
 Crie uma nova tabela chamada `municipios_5880` contendo todos os municípios reprojetados para *SIRGAS 2000 / Brazil Polyconic* (SRID=5880).
@@ -128,10 +125,6 @@ CREATE TABLE municipios_5880 AS
 SELECT id, nome, ST_Transform(geom, 5880) AS geom
 FROM municipios;
 ```
-
-Não esqueça de atualizar os metadados espaciais e criar índices espaciais na nova tabela!
-
----
 
 ### 4. Poços em Santa Rita
 A partir da tabela `pocos`, realize uma consulta que mostre os dados do município de **Santa Rita** com as seguintes colunas:
@@ -154,12 +147,8 @@ A partir da tabela `pocos`, realize uma consulta que mostre os dados do municíp
 
 **Dica:** Santa Rita também está no fuso 25S (SRID=31985).
 
----
-
 ### 5. Sedes do Fuso 25 Sul em UTM
 Converta todas as geometrias das sedes que estão no **fuso 25 Sul** para UTM - SIRGAS 2000 (SRID=31985).
-
-**Desafio adicional:** Crie uma coluna indicando se a conversão foi aplicada ou não, e salve o resultado em uma nova tabela.
 
 **Dica:** Municípios do fuso 25S geralmente têm longitude > -36°.
 
