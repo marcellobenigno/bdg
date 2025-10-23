@@ -95,12 +95,14 @@ id  |  nome | geom
 
 ### Quando usar cada projeção?
 
-| Projeção | SRID | Uso Recomendado | Observações |
-|----------|------|-----------------|-------------|
-| **SIRGAS 2000 Geográfica** | 4674 | Armazenamento geral, GPS | Coordenadas em graus |
-| **UTM Zona 24S** | 31984 | Análises locais no oeste da PB | Preserva distâncias localmente |
-| **UTM Zona 25S** | 31985 | Análises locais no leste da PB | Preserva distâncias localmente |
-| **Brazil Polyconic** | 5880 | Mapas estaduais/regionais | Menor distorção para o Brasil |
+| **Projeção**                       | **SRID**  | **Unidade de Medida** | **Uso Recomendado**                                                          | **Observações**                                                                                                                                                                                                                                            |
+| ---------------------------------- | --------- | --------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **WGS 84 Geográfica**              | **4326**  | Graus decimais        | **Sistemas de GPS**, **mapas online** (Google Maps, OSM) e **dados globais** | Sistema de referência **internacional** usado mundialmente. As coordenadas são dadas em **latitude e longitude**, o que o torna ótimo para localização, mas **inadequado para medições precisas de área ou distância**, pois as unidades não são lineares. |
+| **SIRGAS 2000 Geográfica**         | **4674**  | Graus decimais        | **Armazenamento e padronização oficial no Brasil**                           | Referencial **oficial brasileiro**, adotado pelo IBGE. Mantém compatibilidade com o WGS 84, mas com **ajuste geodésico específico da América do Sul**. Indicado para **armazenamento e intercâmbio de dados**.                                             |
+| **UTM Zona 24S (SIRGAS 2000)**     | **31984** | Metros                | **Análises locais no oeste da Paraíba**                                      | Sistema **métrico** que permite **medições precisas de distâncias e áreas**. Ideal para aplicações em municípios **a oeste do meridiano 39°W**. Mantém **baixa distorção** dentro da zona.                                                                 |
+| **UTM Zona 25S (SIRGAS 2000)**     | **31985** | Metros                | **Análises locais no leste da Paraíba**                                      | Também usa **coordenadas métricas**, adequadas para cálculos espaciais precisos. Recomendado para áreas **a leste do meridiano 39°W**, incluindo **João Pessoa e região litorânea**.                                                                       |
+| **Brazil Polyconic (SIRGAS 2000)** | **5880**  | Metros                | **Mapas estaduais ou regionais**                                             | Projeção que **minimiza distorções** em áreas grandes, ideal para **mapas de síntese** ou representações de **todo o território estadual/nacional**. Menos precisa para análises locais.                                                                   |
+
 
 
 ## Exercícios
