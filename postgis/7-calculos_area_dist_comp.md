@@ -73,7 +73,7 @@ WHERE nome = 'João Pessoa';
 
 ```sql
 -- Qual são as 4 maiores microrregiões do estado?
-SELECT microregiao, SUM(ST_Area(geom::geography)) / 1000000 AS area_total_km
+SELECT microregiao, SUM(ST_Area(geom::geography)) / 1000000 AS area_total_km2
 FROM municipios
 GROUP BY microregiao
 ORDER BY microregiao DESC
