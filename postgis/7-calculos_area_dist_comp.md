@@ -76,7 +76,7 @@ WHERE nome = 'João Pessoa';
 SELECT microregiao, SUM(ST_Area(geom::geography)) / 1000000 AS area_total_km2
 FROM municipios
 GROUP BY microregiao
-ORDER BY microregiao DESC
+ORDER BY area_total_km2 DESC
 LIMIT 4
 ```
 
