@@ -113,7 +113,7 @@ Exiba a geometria da sede de **Cabedelo** em formato WKT, reprojetando os dados 
 
 
 ### 2. Rodovia PB-195 em UTM
-Exiba a geometria do trecho **PB-195/0010**  (campo `descricao`) em WKT, reprojetando os dados para UTM Zona 24S (SRID=31984).
+Exiba a geometria do trecho **PB-195/0010**  (campo `codigo`) em WKT, reprojetando os dados para UTM Zona 24S (SRID=31984).
 
 
 ### 3. Criar Tabela com Nova Projeção
