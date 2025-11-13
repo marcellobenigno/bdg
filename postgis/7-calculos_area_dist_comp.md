@@ -3,7 +3,7 @@
 A forma geométrica dos objetos pode ser codificada usando os tipos
  de dados **GEOMETRY** ou **GEOGRAPHY**:
 
- <img src="../img/geometry_geography.png" width="600">
+ <img src="../img/geometry_geography.png" width="450">
 
 
  * **GEOMETRY**:
