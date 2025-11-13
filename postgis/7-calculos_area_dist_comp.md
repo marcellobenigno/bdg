@@ -3,6 +3,8 @@
 A forma geométrica dos objetos pode ser codificada usando os tipos
  de dados **GEOMETRY** ou **GEOGRAPHY**:
 
+ <img src="../img/geometry_geography.png" width="600">
+
 
  * **GEOMETRY**:
  	- Assume-se que a projeção já foi feita, e os cálculos são planares (cartesianos);
