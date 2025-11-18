@@ -203,4 +203,5 @@ WHERE sit_fisica = 'Pavimentada';
 8. Qual é o perímetro de Lagoa Seca? exiba os valores em km e em metros na mesma consulta.
 9. Qual é o comprimento total da rodovia PB-008? **OBS**: Uma rodovia é composta por todos os seus trechos
 10. Exiba o comprimento total das rodovias, agrupadas e ordenadas pelo campo "jurisdicao".
-11. Qual é a rodovia de menor extensão? **OBS**: Uma rodovia é composta por todos os seus trechos. 
+11. Qual é a rodovia de menor extensão? **OBS**: Uma rodovia é composta por todos os seus trechos.
+12. Qual é a soma total das áreas dos municípios do estado da Paraíba em km²? compare o resultado com a questão 2.
