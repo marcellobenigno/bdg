@@ -196,11 +196,11 @@ WHERE sit_fisica = 'Pavimentada';
 1. Qual é a área em hectares, do município de Patos?
 2. Qual é a área total em km² dos estados da Paraíba e do Rio Grande do Norte?
 3. Crie uma consulta que retorne os nomes das mesorregiões e seus valores de área em km², ordenadas de forma crescente.
-4. Qual é o município de maior área do estado?
+4. Qual é o município de maior área? Exiba o resultado em km²
 5. Calcule o valor da área do município de Santa Rita, projetando antes a sua geometria para UTM (SRID = 31985).
 6. Qual a menor distância entre a sede de Areia e a de Campina Grande?
 7. Exiba as cinco sedes mais próximas de Patos, com as suas respectivas distâncias.
 8. Qual é o perímetro de Lagoa Seca? exiba os valores em km e em metros na mesma consulta.
 9. Qual é o comprimento total da rodovia PB-008? **OBS**: Uma rodovia é composta por todos os seus trechos
-10. Exiba o comprimento total das rodovias, ordenadas pelo campo "jurisdicao".
+10. Exiba o comprimento total das rodovias, agrupadas e ordenadas pelo campo "jurisdicao".
 11. Qual é a rodovia de menor extensão? **OBS**: Uma rodovia é composta por todos os seus trechos. 
