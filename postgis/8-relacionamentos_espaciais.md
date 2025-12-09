@@ -99,7 +99,7 @@ WHERE ST_Disjoint(a.geom, b.geom)
 
 ### [ST_Crosses](https://postgis.net/docs/ST_Crosses.html)
 
-Compara duas geometria e retorna verdadeiro se sua interseção "cruzar espacialmente" a outra, ou seja, as geometrias possuem alguns, mas não todos os pontos internos em comum. A interseção dos interiores das geometrias não deve ser vazia e deve ter dimensão menor que a dimensão máxima das duas geometrias de entrada. Além disso, a interseção das duas geometrias não deve ser igual a nenhuma das geometrias de origem. Caso contrário, ele retorna falso.
+Compara duas geometria e retorna verdadeiro se sua interseção "cruzar espacialmente" a outra, ou seja, as geometrias possuem alguns, mas não todos os pontos internos em comum. A interseção das duas geometrias não deve ser igual a nenhuma das geometrias de origem. Caso contrário, ele retorna falso.
 
 <div align=center>
   <img src="../img/img_st_crosses.jpg" width="500px" />
