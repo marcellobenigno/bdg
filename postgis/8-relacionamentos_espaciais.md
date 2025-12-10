@@ -321,7 +321,7 @@ ORDER BY distancia_km;
 4. Quais são os poços que estão dentro do município de Pombal?
 5. Quais são os poços que estão a 15 km da sede de Patos? Ordene o resultado pela distância.
 6. Quais são os municípios que intersectam a PB-008? 
-7. Quanto é a soma total dos comprimentos dos rios que estão contidos pela microrregião do Agreste Paraibano?
+7. Quanto é a soma total dos comprimentos dos rios que estão contidos pela mesorregião do Agreste Paraibano?
 8. Qual é a densidade populacional dos setores censitários que são cruzados pelo Rio Paraíba?
 9. Liste os municípios que têm ao menos um trecho da BR-104 dentro do seu território.
 10. Quais são os rios que cruzam o município de Sousa?
