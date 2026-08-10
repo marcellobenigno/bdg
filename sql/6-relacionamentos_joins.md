@@ -243,3 +243,7 @@ Visualmente, é o mesmo caso de N:N que vimos no módulo 1 — a consulta acima 
 4. Utilizando uma subconsulta, liste os proprietários que possuem **3 ou mais** lotes (mesmo que em regime de co-propriedade).
 5. Reescreva a consulta da CTE de "área possuída por proprietário" acima, mas filtrando (com `HAVING`) apenas os proprietários cuja área total possuída seja maior que 1000 m².
 6. Escreva uma consulta com três tabelas (`lote`, `lote_proprietario`, `proprietario`) que mostre todos os lotes que têm mais de um proprietário, com o nome de cada um e seu percentual de posse.
+
+---
+
+**Navegação:** [⬅ Anterior: 5. Agregação e Agrupamento](5-agregacao_agrupamento.md) | [🏠 Índice](../README.md) | [Próximo: 7. Tópicos Complementares ➡](7-topicos_complementares.md)

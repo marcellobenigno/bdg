@@ -68,3 +68,7 @@ Conversão de camadas no formato GeoPackage em tabelas PostGIS | Prof. Marcello 
 ### Exercício:
 
 1. Importe todas as camadas do GeoPackage deste [link](https://drive.google.com/file/d/1uBAsmt7UW6enTe4miAxVLK5U98BkvCi4/view?usp=share_link), para o BDG `pb`. Para baixar os dados, é necessário que você esteja logado na sua conta do IFPB.
+
+---
+
+**Navegação:** [⬅ Anterior: 4. Inserção de Dados](4-insercao_dados.md) | [🏠 Índice](../README.md) | [Próximo: 6. Trabalhando com Projeções ➡](6-projecoes.md)

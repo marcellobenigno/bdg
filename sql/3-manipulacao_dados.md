@@ -135,3 +135,7 @@ Se tentarmos apagar um registro que é referenciado por uma chave estrangeira em
 3. Atualize a área do lote de `id = 3` para `320.00`.
 4. Escreva o `DELETE` que remove o proprietário `'Ana Beatriz Souza'` (id 1). Explique por que o PostgreSQL recusa esse comando enquanto existirem linhas em `lote_proprietario` referenciando esse proprietário, e o que seria necessário fazer antes.
 5. O poste de `id = 6` foi cadastrado com `potencia_watts = 400`, mas o correto é `250`. Escreva o `UPDATE` que corrige esse valor.
+
+---
+
+**Navegação:** [⬅ Anterior: 2. Criação e Alteração de Tabelas](2-criacao_alteracao_tabelas.md) | [🏠 Índice](../README.md) | [Próximo: 4. Consultas Básicas ➡](4-consultas_basicas.md)

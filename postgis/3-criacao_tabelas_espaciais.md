@@ -164,5 +164,9 @@ CREATE TABLE area_estudo (
 
 1.2 - Apague as tabelas criadas anteriormente e as recrie com o segundo método, em seguida utilize a função `Populate_Geometry_Columns` para cada uma das tabelas criadas.
 
+---
+
+**Navegação:** [⬅ Anterior: 2. Dados do Curso](2-dados_curso.md) | [🏠 Índice](../README.md) | [Próximo: 4. Inserção de Dados ➡](4-insercao_dados.md)
+
 
 

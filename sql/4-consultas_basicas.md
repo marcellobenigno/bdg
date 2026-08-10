@@ -164,3 +164,7 @@ Sem o `DISTINCT`, a mesma consulta retornaria 8 linhas (uma por lote), com valor
 5. Liste, sem repetição, todos os zoneamentos cadastrados na tabela `quadra`.
 6. Quais lotes têm `numero` igual a `'01'` **e** `uso_solo` igual a `'Residencial'`?
 7. Liste o nome de todas as bacias hidrográficas cujo nome comece com a letra `'R'`.
+
+---
+
+**Navegação:** [⬅ Anterior: 3. Manipulação de Dados](3-manipulacao_dados.md) | [🏠 Índice](../README.md) | [Próximo: 5. Agregação e Agrupamento ➡](5-agregacao_agrupamento.md)

@@ -129,4 +129,4 @@ FROM proprietario;
 
 Você concluiu a revisão de SQL convencional. Os comandos `CREATE`, `INSERT`, `SELECT`, `WHERE`, `JOIN`, `GROUP BY`, `HAVING` e o operador `::` (cast) que você praticou aqui são exatamente os mesmos que serão usados a partir de agora — a única novidade a partir do próximo módulo é um novo tipo de dado, o `geometry`, e um conjunto de funções (`ST_*`) que operam sobre ele.
 
-Siga para [3. Criação de Tabelas Espaciais](../postgis/3-criacao_tabelas_espaciais.md) para começar a Parte 2 do curso.
+**Navegação:** [⬅ Anterior: 6. Relacionamentos entre Tabelas (JOINs)](6-relacionamentos_joins.md) | [🏠 Índice](../README.md) | [Próximo: PostGIS 1. Introdução ➡](../postgis/1-introducao.md)

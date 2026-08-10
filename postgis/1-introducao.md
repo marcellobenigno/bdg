@@ -113,3 +113,7 @@ Create a Spatial Database | PostGIS Baby Steps - The Geospatials
 ## Exercício:
 
 1. Crie um Banco de Dados Geográficos seguindo os passos anteriores com o nome `pb`.
+
+---
+
+**Navegação:** [⬅ Anterior: SQL 7. Tópicos Complementares](../sql/7-topicos_complementares.md) | [🏠 Índice](../README.md) | [Próximo: 2. Dados do Curso ➡](2-dados_curso.md)

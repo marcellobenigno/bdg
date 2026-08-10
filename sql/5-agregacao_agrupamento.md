@@ -129,3 +129,7 @@ HAVING SUM(extensao_km) > 400;
 4. Quais logradouros têm 3 ou mais postes cadastrados? Utilize `HAVING`.
 5. Qual bacia hidrográfica tem a menor soma de `extensao_km` entre seus rios?
 6. Existe alguma `quadra_id` cuja soma de `area_m2` dos lotes seja maior que 1000 m²? Utilize `HAVING`.
+
+---
+
+**Navegação:** [⬅ Anterior: 4. Consultas Básicas](4-consultas_basicas.md) | [🏠 Índice](../README.md) | [Próximo: 6. Relacionamentos entre Tabelas (JOINs) ➡](6-relacionamentos_joins.md)

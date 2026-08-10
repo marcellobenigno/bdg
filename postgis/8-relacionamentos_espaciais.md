@@ -328,3 +328,7 @@ ORDER BY distancia_km;
 11. Quais municípios estão a até 20 km da sede de Campina Grande?
 12. Calcule a soma da área dos setores censitários que cruzam com a rodovia BR-230.
 13. Quais são os municípios da mesorregião do Sertão Paraibano que possuem pelo menos 30 poços?
+
+---
+
+**Navegação:** [⬅ Anterior: 7. Cálculos de Área, Perímetro, Distância e Comprimento](7-calculos_area_dist_comp.md) | [🏠 Índice](../README.md) | [Próximo: 9. Funções que Geram Novas Geometrias ➡](9-novas_geometrias.md)

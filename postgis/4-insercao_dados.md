@@ -160,6 +160,10 @@ Vértices:
 -37.43639905426404368 -7.15852687112846375
 ```
 
+---
+
+**Navegação:** [⬅ Anterior: 3. Criação de Tabelas Espaciais](3-criacao_tabelas_espaciais.md) | [🏠 Índice](../README.md) | [Próximo: 5. Importação de Dados Espaciais ➡](5-importacao_dados.md)
+
 
 
 

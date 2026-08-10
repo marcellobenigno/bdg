@@ -104,3 +104,7 @@ No próximo módulo vamos implementar esse modelo no PostgreSQL com `CREATE TABL
 3. Quais colunas, no mínimo, a tabela `lote_proprietario` precisa ter para representar corretamente o relacionamento N:N entre `lote` e `proprietario`?
 4. Considere o seguinte cenário: *"cada poste pode iluminar mais de um trecho de rua, e cada trecho de rua pode ser iluminado por mais de um poste"*. Desenhe (ou descreva em texto, como no exemplo acima) o modelo necessário para representar esse relacionamento, incluindo a tabela associativa.
 5. No modelo `lote_proprietario`, identifique o atributo que não pertence nem a `lote` nem a `proprietario`, mas sim ao relacionamento entre os dois. Justifique.
+
+---
+
+**Navegação:** [🏠 Índice](../README.md) | [Próximo: 2. Criação e Alteração de Tabelas ➡](2-criacao_alteracao_tabelas.md)

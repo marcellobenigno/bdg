@@ -262,3 +262,7 @@ WHERE m.nome = 'Patos';
 8. Prove que a área de interseção entre a mesorregião da Mata Paraibana e a da Borborema é igual a zero.
 9. Encontre as geometrias dos municípios cortados pela BR-230 que não estão dentro de um buffer de 1 km da rodovia. Use as funções ST_Difference e ST_Buffer.
 10. Para cada microrregião do estado que possui poços, gere o envoltório convexo (ST_ConvexHull) dos poços contidos em seus limites e calcule a área resultante em hectares, excluindo as microrregiões cujo convex hull tenha área igual a zero.
+
+---
+
+**Navegação:** [⬅ Anterior: 8. Relacionamentos Espaciais](8-relacionamentos_espaciais.md) | [🏠 Índice](../README.md)

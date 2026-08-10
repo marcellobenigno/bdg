@@ -207,3 +207,7 @@ WHERE sit_fisica = 'Pavimentada';
 10. Exiba o comprimento total das rodovias, agrupadas e ordenadas pelo campo "jurisdicao".
 11. Qual é a rodovia de menor extensão? **OBS**: Uma rodovia é composta por todos os seus trechos.
 12. Qual é a soma total das áreas dos municípios do estado da Paraíba em km²? compare o resultado com a questão 2.
+
+---
+
+**Navegação:** [⬅ Anterior: 6. Trabalhando com Projeções](6-projecoes.md) | [🏠 Índice](../README.md) | [Próximo: 8. Relacionamentos Espaciais ➡](8-relacionamentos_espaciais.md)

@@ -205,3 +205,7 @@ Se tentarmos `DROP TABLE quadra;` sem `CASCADE`, o PostgreSQL vai recusar o coma
 3. Crie a tabela `poco` (poço de captação de água), com `id`, `profundidade_m` (com uma `CHECK` garantindo que seja maior que zero) e uma chave estrangeira para `bacia_hidrografica`.
 4. O que acontece se você tentar `DROP TABLE bacia_hidrografica;` depois de já ter criado a tabela `rio`? Reescreva o comando para que ele funcione.
 5. Renomeie a coluna `nome` da tabela `bairro` para `nome_bairro`.
+
+---
+
+**Navegação:** [⬅ Anterior: 1. Modelagem de Dados e Conceitos Relacionais](1-modelagem_dados.md) | [🏠 Índice](../README.md) | [Próximo: 3. Manipulação de Dados ➡](3-manipulacao_dados.md)

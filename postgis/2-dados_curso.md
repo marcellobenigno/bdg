@@ -47,3 +47,7 @@ OBS: É necessário estar **logado** na sua conta do **IFPB** para ter acesso.
 <img src="../img/sedes_img.jpg">
 <div align="center">Fonte: IBGE (2021)</div>
 <hr/>
+
+---
+
+**Navegação:** [⬅ Anterior: 1. Introdução](1-introducao.md) | [🏠 Índice](../README.md) | [Próximo: 3. Criação de Tabelas Espaciais ➡](3-criacao_tabelas_espaciais.md)

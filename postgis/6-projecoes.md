@@ -161,3 +161,7 @@ Converta todas as geometrias das sedes que estão no **fuso 25 Sul** para UTM - 
 - **Spatial Reference:** https://spatialreference.org/ (informações detalhadas sobre projeções)
 
 **💡 Dica Final:** Sempre verifique o SRID dos seus dados antes de realizar análises espaciais usando `SELECT ST_SRID(geom) FROM tabela LIMIT 1`.
+
+---
+
+**Navegação:** [⬅ Anterior: 5. Importação de Dados Espaciais](5-importacao_dados.md) | [🏠 Índice](../README.md) | [Próximo: 7. Cálculos de Área, Perímetro, Distância e Comprimento ➡](7-calculos_area_dist_comp.md)
