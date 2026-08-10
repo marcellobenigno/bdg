@@ -33,16 +33,16 @@ ORDER BY q.codigo, l.numero;
 ```
 
 ```
- codigo | numero | area_m2
+ codigo | numero | area_m2 
 --------+--------+---------
- Q-101  |   01   |  360.00
- Q-101  |   02   |  450.50
- Q-101  |   03   |  300.00
- Q-102  |   01   |  500.00
- Q-102  |   02   |  480.00
- Q-103  |   01   |  800.00
- Q-103  |   02   |  650.00
- Q-201  |   01   | 1200.00
+ Q-101  | 01     |  360.00
+ Q-101  | 02     |  450.50
+ Q-101  | 03     |  300.00
+ Q-102  | 01     |  500.00
+ Q-102  | 02     |  480.00
+ Q-103  | 01     |  800.00
+ Q-103  | 02     |  650.00
+ Q-201  | 01     | 1200.00
 ```
 
 Visualmente, o `INNER JOIN` combina as duas tabelas pela condição `ON` e mantém **apenas** as linhas em que houve correspondência dos dois lados:
@@ -72,12 +72,12 @@ ORDER BY lg.nome;
 ```
 
 ```
-         nome         | qtde_postes
------------------------+--------------
- Av. Getúlio Vargas    |      3
- Rua das Acácias       |      3
- Rua do Comércio       |      1
- Travessa Nova         |      0
+        nome        | qtde_postes 
+--------------------+-------------
+ Av. Getúlio Vargas |           3
+ Rua das Acácias    |           3
+ Rua do Comércio    |           1
+ Travessa Nova      |           0
 ```
 
 Visualmente, o `LEFT JOIN` mantém **todas** as linhas da tabela à esquerda (`logradouro`); quando não há poste correspondente, as colunas de `poste` entram como `NULL` em vez de a linha simplesmente desaparecer:
@@ -112,14 +112,14 @@ ORDER BY id;
 ```
 
 ```
- numero | area_m2
+ numero | area_m2 
 --------+---------
-   01   |  360.00
-   03   |  300.00
-   01   |  500.00
-   01   |  800.00
-   02   |  650.00
-   01   | 1200.00
+ 01     |  360.00
+ 03     |  300.00
+ 01     |  500.00
+ 01     |  800.00
+ 02     |  650.00
+ 01     | 1200.00
 ```
 
 (os lotes 2 e 5 ficam de fora, pois são os dois casos de co-propriedade do nosso modelo)
@@ -168,12 +168,12 @@ ORDER BY area_total_m2 DESC;
 ```
 
 ```
-          nome          | area_total_m2
--------------------------+-----------------
- Carlos Eduardo Lima     |    1725.25
- Ana Beatriz Souza       |    1235.25
- João Pedro Nascimento   |     992.00
- Fernanda Costa Melo     |     788.00
+         nome          | area_total_m2 
+-----------------------+---------------
+ Carlos Eduardo Lima   |       1725.25
+ Ana Beatriz Souza     |       1235.25
+ João Pedro Nascimento |        992.00
+ Fernanda Costa Melo   |        788.00
 ```
 
 > 💡 Assim como no módulo anterior, o `SUM` de uma expressão com divisão retorna muitas casas decimais (`1725.2500000000000000000000`); o `ROUND(expressao, 2)` deixa o resultado legível.
@@ -217,10 +217,10 @@ ORDER BY lp.percentual_posse DESC;
 ```
 
 ```
- numero | codigo |        nome        | percentual_posse
---------+--------+---------------------+-------------------
-   02   | Q-101  | Ana Beatriz Souza   |      50.00
-   02   | Q-101  | Carlos Eduardo Lima |      50.00
+ numero | codigo |        nome         | percentual_posse 
+--------+--------+---------------------+------------------
+ 02     | Q-101  | Ana Beatriz Souza   |            50.00
+ 02     | Q-101  | Carlos Eduardo Lima |            50.00
 ```
 
 Visualmente, é o mesmo caso de N:N que vimos no módulo 1 — a consulta acima passa **através** de `lote_proprietario` para conectar `lote` e `proprietario`:
