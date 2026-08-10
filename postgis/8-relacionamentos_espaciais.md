@@ -65,7 +65,7 @@ ORDER BY codigo;
 
 ### [ST_Disjoint](https://postgis.net/docs/ST_Disjoint.html)
 
-É o oposto da função `ST_Intersects`, `ST_Disjoint`` verifica se duas geometrias são disjuntas, ou seja, não possuem nenhum ponto em comum:
+É o oposto da função `ST_Intersects`, `ST_Disjoint` verifica se duas geometrias são disjuntas, ou seja, não possuem nenhum ponto em comum:
 
 <div align=center>
 	<img src="../img/img_st_disjoint.jpg" width="500px" />
@@ -99,7 +99,7 @@ WHERE ST_Disjoint(a.geom, b.geom)
 
 ### [ST_Crosses](https://postgis.net/docs/ST_Crosses.html)
 
-Compara duas geometria e retorna verdadeiro se sua interseção "cruzar espacialmente" a outra, ou seja, as geometrias possuem alguns, mas não todos os pontos internos em comum. A interseção dos interiores das geometrias não deve ser vazia e deve ter dimensão menor que a dimensão máxima das duas geometrias de entrada. Além disso, a interseção das duas geometrias não deve ser igual a nenhuma das geometrias de origem. Caso contrário, ele retorna falso.
+Compara duas geometria e retorna verdadeiro se sua interseção "cruzar espacialmente" a outra, ou seja, as geometrias possuem alguns, mas não todos os pontos internos em comum. A interseção das duas geometrias não deve ser igual a nenhuma das geometrias de origem. Caso contrário, ele retorna falso.
 
 <div align=center>
   <img src="../img/img_st_crosses.jpg" width="500px" />
@@ -321,7 +321,7 @@ ORDER BY distancia_km;
 4. Quais são os poços que estão dentro do município de Pombal?
 5. Quais são os poços que estão a 15 km da sede de Patos? Ordene o resultado pela distância.
 6. Quais são os municípios que intersectam a PB-008? 
-7. Quanto é a soma total dos comprimentos dos rios que estão contidos pela microrregião do Agreste Paraibano?
+7. Quanto é a soma total dos comprimentos dos rios que estão contidos pela mesorregião do Agreste Paraibano?
 8. Qual é a densidade populacional dos setores censitários que são cruzados pelo Rio Paraíba?
 9. Liste os municípios que têm ao menos um trecho da BR-104 dentro do seu território.
 10. Quais são os rios que cruzam o município de Sousa?

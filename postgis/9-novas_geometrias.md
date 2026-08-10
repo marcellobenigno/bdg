@@ -256,7 +256,7 @@ WHERE m.nome = 'Patos';
 2. Gere pontos na superfície para os polígonos da camada `densidade_pb` que estão localizados na mesorregião do Sertão Paraibano.
 3. Crie um buffer de 2km para a rodovia BR-230.
 4. Repita o procedimento anterior, unindo antes os trechos de rodovia.
-5. Calcule a área de interseção entre o buffer da rodovia BR-230 e os municípios. Adicione a consulta o valor da área recortada em hectares de cada município e ordene o resultado da maior para a menor área.
+5. Calcule a área de interseção entre o buffer de 5km de raio da rodovia BR-230 e os municípios. Adicione a consulta o valor da área recortada em hectares de cada município e ordene o resultado da maior para a menor área.
 6. Crie uma única geometria que represente a Mesorregião da Borborema.
 7. Gerar uma única área de influência com raio de 700 metros, ao redor dos poços localizados em João Pessoa. Utilize as funções ST_Buffer e ST_Union para isso.
 8. Prove que a área de interseção entre a mesorregião da Mata Paraibana e a da Borborema é igual a zero.
