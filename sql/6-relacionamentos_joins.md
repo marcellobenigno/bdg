@@ -52,7 +52,7 @@ Visualmente, o `INNER JOIN` combina as duas tabelas pela condição `ON` e mant�
 ┌────┬───────────┐   ┌────┬────────┐     ┌────────┬────────┬─────────┐
 │ id │ quadra_id │   │ id │ codigo │     │ codigo │ numero │ area_m2 │
 ├────┼───────────┤   ├────┼────────┤     ├────────┼────────┼─────────┤
-│ 1  │     1     │ ⋈ │ 1  │ Q-101  │ ──► │ Q-101  │   01   │ 360.00  │
+│ 1  │     1     │ x │ 1  │ Q-101  │ --> │ Q-101  │   01   │ 360.00  │
 │ 4  │     2     │   │ 2  │ Q-102  │     │ Q-102  │   01   │ 500.00  │
 └────┴───────────┘   └────┴────────┘     └────────┴────────┴─────────┘
 ```
@@ -87,7 +87,7 @@ Visualmente, o `LEFT JOIN` mantém **todas** as linhas da tabela à esquerda (`l
 ┌────┬─────────────────┐   ┌──────┬───────────────┐     ┌─────────────────┬─────────────┐
 │ id │      nome       │   │  id  │ logradouro_id │     │      nome       │ qtde_postes │
 ├────┼─────────────────┤   ├──────┼───────────────┤     ├─────────────────┼─────────────┤
-│ 3  │ Rua do Comércio │ ⟕ │  6   │       3       │ ──► │ Rua do Comércio │      1      │
+│ 3  │ Rua do Comércio │ L │  6   │       3       │ --> │ Rua do Comércio │      1      │
 │ 4  │  Travessa Nova  │   │ NULL │     NULL      │     │  Travessa Nova  │      0      │
 └────┴─────────────────┘   └──────┴───────────────┘     └─────────────────┴─────────────┘
 ```
@@ -137,7 +137,7 @@ O PostgreSQL executa a subconsulta primeiro, obtém uma lista de valores, e só 
   └───────────────────────────────────────┘  
                       │                      
                usado dentro de               
-                      ▼                      
+                      v                      
 ┌───────────────────────────────────────────┐
 │ 2) a consulta externa usa esse resultado: │
 │                                           │
@@ -189,7 +189,7 @@ A CTE `posse` funciona como uma tabela temporária, que só existe durante a exe
         └─────────────────────────────────────────────┘        
                                │                               
                 usada como se fosse uma tabela                 
-                               ▼                               
+                               v                               
 ┌─────────────────────────────────────────────────────────────┐
 │ SELECT pr.nome, SUM(posse.area_possuida)                    │
 │ FROM posse                                                  │
@@ -230,8 +230,8 @@ Visualmente, é o mesmo caso de N:N que vimos no módulo 1 — a consulta acima 
 ┌────┬────────┐    ┌─────────┬─────────────────┬──────────────────┐    ┌────┬──────────────┐
 │ id │ numero │    │ lote_id │ proprietario_id │ percentual_posse │    │ id │     nome     │
 ├────┼────────┤    ├─────────┼─────────────────┼──────────────────┤    ├────┼──────────────┤
-│ 2  │   02   │◄───│    2    │        1        │      50.00       │───►│ 1  │ Ana Beatriz  │
-│ 2  │   02   │◄───│    2    │        2        │      50.00       │───►│ 2  │    Carlos    │
+│ 2  │   02   │<---│    2    │        1        │      50.00       │--->│ 1  │ Ana Beatriz  │
+│ 2  │   02   │<---│    2    │        2        │      50.00       │--->│ 2  │    Carlos    │
 └────┴────────┘    └─────────┴─────────────────┴──────────────────┘    └────┴──────────────┘
 ```
 
