@@ -62,7 +62,37 @@ CREATE TABLE nome_da_tabela (
 
 ### Criando o Modelo Completo
 
-Seguindo o modelo do módulo 1, vamos criar as oito tabelas na ordem correta — sempre criando primeiro a tabela do lado "1" de um relacionamento, antes da tabela que a referencia:
+Seguindo o modelo do módulo 1, vamos criar as oito tabelas na ordem correta — sempre criando primeiro a tabela do lado "1" de um relacionamento, antes da tabela que a referencia. Antes do código, veja o modelo relacional completo que vamos implementar, com as colunas de cada tabela e a indicação de qual é chave primária (`PK`) e qual é chave estrangeira (`FK`):
+
+```
+ bacia_hidrografica (1)                         rio (N)
+┌────┬──────┬──────────┐         ┌────┬──────┬─────────────┬──────────┐
+│ id │ nome │ area_km2 │         │ id │ nome │ extensao_km │ bacia_id │
+├────┼──────┼──────────┤         ├────┼──────┼─────────────┼──────────┤
+│ PK │ ...  │   ...    │ ──────< │ PK │ ...  │     ...     │    FK    │
+└────┴──────┴──────────┘         └────┴──────┴─────────────┴──────────┘
+
+         quadra (1)                                      lote (N)
+┌────┬────────┬────────────┐         ┌────┬────────┬─────────┬──────────┬───────────┐
+│ id │ codigo │ zoneamento │         │ id │ numero │ area_m2 │ uso_solo │ quadra_id │
+├────┼────────┼────────────┤         ├────┼────────┼─────────┼──────────┼───────────┤
+│ PK │  ...   │    ...     │ ──────< │ PK │  ...   │   ...   │   ...    │    FK     │
+└────┴────────┴────────────┘         └────┴────────┴─────────┴──────────┴───────────┘
+
+      logradouro (1)                                 poste (N)
+┌────┬──────┬────────────┐         ┌────┬──────┬────────────────┬───────────────┐
+│ id │ nome │ hierarquia │         │ id │ tipo │ potencia_watts │ logradouro_id │
+├────┼──────┼────────────┤         ├────┼──────┼────────────────┼───────────────┤
+│ PK │ ...  │    ...     │ ──────< │ PK │ ...  │      ...       │      FK       │
+└────┴──────┴────────────┘         └────┴──────┴────────────────┴───────────────┘
+
+   lote (N)                       lote_proprietario                    proprietario (N)
+┌────┬────────┐    ┌─────────┬─────────────────┬──────────────────┐    ┌────┬──────┐
+│ id │ numero │    │ lote_id │ proprietario_id │ percentual_posse │    │ id │ nome │
+├────┼────────┤    ├─────────┼─────────────────┼──────────────────┤    ├────┼──────┤
+│ PK │  ...   │◄───│   FK    │       FK        │       ...        │───►│ PK │ ...  │
+└────┴────────┘    └─────────┴─────────────────┴──────────────────┘    └────┴──────┘
+```
 
 ```sql
 -- ambiental: bacia hidrográfica (1) -> rio (N)

@@ -28,23 +28,24 @@ Uma tabela relacional organiza os dados em **linhas** (registros) e **colunas** 
 É a coluna que **referencia a chave primária de outra tabela**, criando um relacionamento entre elas. Por exemplo, se cada lote pertence a uma quadra, a tabela `lote` terá uma coluna `quadra_id` que aponta para `quadra.id`:
 
 ```
-     quadra                          lote
- ┌────┬─────────┐            ┌────┬────────┬───────────┐
- │ id │ codigo  │            │ id │ numero │ quadra_id │
- ├────┼─────────┤            ├────┼────────┼───────────┤
- │  1 │ Q-101   │ ◄──────────┤  1 │   01   │     1     │
- │  2 │ Q-102   │ ◄──┐       │  2 │   02   │     1     │
- └────┴─────────┘    └───────┤  3 │   01   │     2     │
-                              └────┴────────┴───────────┘
-                                (quadra_id é FK para quadra.id)
+  quadra (1)                  lote (N)          
+┌────┬────────┐      ┌────┬────────┬───────────┐
+│ id │ codigo │      │ id │ numero │ quadra_id │
+├────┼────────┤      ├────┼────────┼───────────┤
+│ 1  │ Q-101  │      │ 1  │   01   │     1     │
+│ 2  │ Q-102  │      │ 2  │   02   │     1     │
+└────┴────────┘      │ 3  │   01   │     2     │
+                     └────┴────────┴───────────┘
 ```
+
+Repare que os lotes 1 e 2 têm `quadra_id = 1` — ambos referenciam (apontam para) a linha `id = 1` (Q-101) da tabela `quadra`. Já o lote 3, com `quadra_id = 2`, referencia a linha `id = 2` (Q-102). É assim que uma FK implementa o relacionamento 1:N: **várias linhas do lado N repetem o mesmo valor**, cada uma apontando de volta para uma única linha do lado 1.
 
 ### Cardinalidade dos Relacionamentos
 
 Ao modelar um relacionamento entre duas tabelas, precisamos definir **quantas linhas de uma se relacionam com quantas linhas da outra**:
 
 * **1:1** — uma linha de A se relaciona com no máximo uma linha de B (pouco comum; ex: um imóvel e sua matrícula única no cartório).
-* **1:N** — uma linha de A se relaciona com várias linhas de B, mas cada linha de B se relaciona com apenas uma linha de A. É o caso mais comum e é resolvido com uma FK **na tabela do lado N**. Exemplos: uma `quadra` tem vários `lote`; uma `bacia_hidrografica` tem vários `rio`; um `logradouro` tem vários `poste`.
+* **1:N** — uma linha de A se relaciona com várias linhas de B, mas cada linha de B se relaciona com apenas uma linha de A. É o caso mais comum e é resolvido com uma FK **na tabela do lado N**. Exemplos: uma `quadra` pode ter vários `lote` (0 ou N); uma `bacia_hidrografica` pode ter vários `rio` (1 ou N); um `logradouro` pode ter vários `poste` (0 ou N).
 * **N:N** — várias linhas de A se relacionam com várias linhas de B. Não pode ser resolvido com uma FK simples em nenhuma das duas tabelas — exige uma **tabela associativa** (também chamada de tabela de ligação ou tabela de junção).
 
 ### Relacionamentos N:N e a Tabela Associativa
@@ -52,13 +53,13 @@ Ao modelar um relacionamento entre duas tabelas, precisamos definir **quantas li
 Um exemplo real do nosso domínio: um **lote** pode ter mais de um **proprietário** (co-propriedade), e um **proprietário** pode possuir mais de um **lote**. Isso é um relacionamento N:N e precisa de uma terceira tabela — `lote_proprietario` — que contém as chaves estrangeiras das duas tabelas envolvidas:
 
 ```
-   lote (N)                lote_proprietario                proprietario (N)
- ┌────┬────────┐    ┌───────────┬─────────────────┬──────────────────┐    ┌────┬──────────────┐
- │ id │ numero │    │ lote_id   │ proprietario_id  │ percentual_posse │    │ id │ nome         │
- ├────┼────────┤    ├───────────┼─────────────────┼──────────────────┤    ├────┼──────────────┤
- │  2 │   02   │◄───┤     2     │        1         │      50.00       ├───►│  1 │ Ana Beatriz  │
- │  2 │   02   │◄───┤     2     │        2         │      50.00       ├───►│  2 │ Carlos       │
- └────┴────────┘    └───────────┴─────────────────┴──────────────────┘    └────┴──────────────┘
+   lote (N)                       lote_proprietario                      proprietario (N)
+┌────┬────────┐    ┌─────────┬─────────────────┬──────────────────┐    ┌────┬──────────────┐
+│ id │ numero │    │ lote_id │ proprietario_id │ percentual_posse │    │ id │     nome     │
+├────┼────────┤    ├─────────┼─────────────────┼──────────────────┤    ├────┼──────────────┤
+│ 2  │   02   │◄───│    2    │        1        │      50.00       │───►│ 1  │ Ana Beatriz  │
+│ 2  │   02   │◄───│    2    │        2        │      50.00       │───►│ 2  │    Carlos    │
+└────┴────────┘    └─────────┴─────────────────┴──────────────────┘    └────┴──────────────┘
 ```
 
 Note que `lote_proprietario` tem duas FKs (`lote_id` e `proprietario_id`) — juntas, elas formam a chave primária composta dessa tabela — e ainda pode ter atributos próprios, que pertencem ao **relacionamento em si**, e não a nenhuma das duas tabelas originais. Aqui, `percentual_posse` é um exemplo: não faz sentido colocá-lo em `lote` nem em `proprietario`, porque ele só existe no contexto da relação entre um lote específico e um proprietário específico.

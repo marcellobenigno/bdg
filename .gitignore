@@ -87,3 +87,6 @@ mediafiles
 .vscode/
 
 .dnconfig
+
+# Gabaritos (respostas dos exercícios) - uso interno do professor, não deve subir para o repositório
+sql/gabaritos/
