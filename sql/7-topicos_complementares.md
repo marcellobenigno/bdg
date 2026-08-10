@@ -28,16 +28,16 @@ ORDER BY area_m2;
 ```
 
 ```
- numero | area_m2 |  porte
---------+---------+----------
-   03   |  300.00 | Pequeno
-   01   |  360.00 | Pequeno
-   02   |  450.50 | Médio
-   02   |  480.00 | Médio
-   01   |  500.00 | Médio
-   02   |  650.00 | Médio
-   01   |  800.00 | Médio
-   01   | 1200.00 | Grande
+ numero | area_m2 |  porte  
+--------+---------+---------
+ 03     |  300.00 | Pequeno
+ 01     |  360.00 | Pequeno
+ 02     |  450.50 | Médio
+ 02     |  480.00 | Médio
+ 01     |  500.00 | Médio
+ 02     |  650.00 | Médio
+ 01     |  800.00 | Médio
+ 01     | 1200.00 | Grande
 ```
 
 Isso é especialmente útil em Geoprocessamento para criar categorias de análise (por exemplo, classificar poços por faixa de profundidade, ou municípios por faixa de densidade populacional) diretamente na consulta, sem precisar de uma coluna extra na tabela.
@@ -88,8 +88,8 @@ WHERE id = 2;
 ```
 
 ```
- area_m2 | area_texto
----------+-------------
+ area_m2 | area_texto 
+---------+------------
   450.50 | 450.50
 ```
 
@@ -101,9 +101,9 @@ WHERE id = 2;
 ```
 
 ```
- area_m2 | area_arredondada
----------+-------------------
- 450.50  |       451
+ area_m2 | area_arredondada 
+---------+------------------
+  450.50 |              451
 ```
 
 > 💡 **Por que isso importa para PostGIS**: a partir do próximo módulo, você vai usar o `CAST` o tempo inteiro, na forma `geometry::geography`, para poder calcular área, distância e comprimento em metros/quilômetros em vez de graus. É exatamente o mesmo operador `::` que acabamos de ver — só que convertendo entre dois tipos espaciais em vez de `numeric` e `text`.
