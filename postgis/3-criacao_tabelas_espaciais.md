@@ -1,5 +1,7 @@
 ## 3. Criação de Tabelas Espaciais
 
+> 💡 Este módulo pressupõe que você já sabe criar tabelas convencionais com `CREATE TABLE`, tipos de dados e *constraints* (`PRIMARY KEY`, `FOREIGN KEY`). Se ainda não revisou isso, veja a [Parte 1 – Revisão de SQL](../sql/1-modelagem_dados.md), especialmente o módulo [Criação e Alteração de Tabelas](../sql/2-criacao_alteracao_tabelas.md).
+
 A criação de tabelas com o PostGIS, pode ser feita de duas formas, sendo exemplificadas a seguir:
 
 * Criando a coluna com o tipo de geometria **após** a criação da tabela, com o comando [`AddGeometryColumn`](https://postgis.net/docs/AddGeometryColumn.html):

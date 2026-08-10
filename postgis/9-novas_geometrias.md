@@ -1,5 +1,7 @@
 ## 9. Funções que Geram Novas Geometrias
 
+> 💡 A partir daqui as consultas usam `JOIN ... ON` explícito e `WITH` (CTE). Se precisar recapitular, veja [Relacionamentos entre Tabelas (JOINs)](../sql/6-relacionamentos_joins.md), na Parte 1 – Revisão de SQL.
+
 As funções de construção de geometria permitem a criação de objetos geométricos, como pontos, linhas e polígonos. Nesta seção iremos explorar o uso das principais funções que se destinam a esse propósito.
 
 ### [ST_Centroid](https://postgis.net/docs/ST_Centroid.html) / [ST_PointOnSurface](https://postgis.net/docs/ST_PointOnSurface.html)

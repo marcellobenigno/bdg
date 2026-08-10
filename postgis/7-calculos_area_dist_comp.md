@@ -1,5 +1,7 @@
 ## 7. Cálculos de Área, Perímetro, Distância e Comprimento
 
+> 💡 Este módulo usa o operador de *cast* (`geometry::geography`) o tempo todo. Se o conceito de `CAST`/`::tipo` for novo para você, veja [Tópicos Complementares](../sql/7-topicos_complementares.md), na Parte 1 – Revisão de SQL.
+
 A forma geométrica dos objetos pode ser codificada usando os tipos
  de dados **GEOMETRY** ou **GEOGRAPHY**:
 
