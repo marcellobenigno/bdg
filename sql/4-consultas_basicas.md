@@ -83,7 +83,7 @@ WHERE uso_solo IN ('Comercial', 'Industrial');
 
 ### Operador LIKE
 
-O operador `LIKE` é utilizado em uma cláusula `WHERE` para procurar um padrão de texto, e possui dois curingas:
+O operador `LIKE` é utilizado em uma cláusula `WHERE` para procurar um padrão de texto, e possui dois coringas:
 
 * `_`: marca uma posição específica (um único caractere);
 * `%`: qualquer sequência de caracteres a partir da posição especificada.
